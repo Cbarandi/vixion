@@ -1,0 +1,2419 @@
+{
+  "saved_at": "2026-04-13T12:43:47.481346+00:00",
+  "article_count": 39,
+  "articles": [
+    {
+      "article_id": "14257814e6d6f15f3f8a466938da8749e6b64aa3c3356ac6e7294c463a122031",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Goldman reports best quarter in 5 years even as bond traders disappoint",
+      "summary": "Equities unit powers bank’s earnings, while fixed-income, currencies and commodities business fell well short",
+      "author": "",
+      "url": "https://www.ft.com/content/35f3b97a-988d-4925-b550-74cda0e28717",
+      "published_at": "2026-04-13T11:56:02+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Goldman reports best quarter in 5 years even as bond traders disappoint Equities unit powers bank’s earnings, while fixed-income, currencies and commodities business fell well short",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 30,
+      "signal_score": 24,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 30.0,
+          "final": 30
+        },
+        "signal": {
+          "combinations": {
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 24.0,
+          "final": 24
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "b361337a4b896d03dbc0ce566eab3f8b05a7c0afda72fcf083c9393506aea65d",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Pope Leo says he has ‘no fear’ of Trump administration",
+      "summary": "Comments from Catholic Church head come hours after US president launched scathing attack on him",
+      "author": "",
+      "url": "https://www.ft.com/content/5cfc03ff-6966-46fd-a62f-01b2452402dc",
+      "published_at": "2026-04-13T11:29:39+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Pope Leo says he has ‘no fear’ of Trump administration Comments from Catholic Church head come hours after US president launched scathing attack on him",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 0,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 0,
+            "points": 0
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 0,
+            "points": 0,
+            "labels_used": []
+          },
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "ce5d894142561891982ac7275fe739bbadbc45cca03104fdbdf93c55d49358c5",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Why time is on Iran’s side",
+      "summary": "A global energy crisis is only just beginning. Political turmoil will follow",
+      "author": "",
+      "url": "https://www.ft.com/content/2f1cbc7d-eeab-40e4-b940-61bf8b1e7959",
+      "published_at": "2026-04-13T10:57:15+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Why time is on Iran’s side A global energy crisis is only just beginning. Political turmoil will follow",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 32,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {},
+          "raw_before_clamp": 32.0,
+          "final": 32
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "4ecd6132048ea19402ce6d53eb240f8f1aa77ed20b150d8be5374ed48e870e05",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Meta builds AI version of Mark Zuckerberg to interact with staff",
+      "summary": "CEO is training and testing his own character as part of wider push to develop ‘personal superintelligence’",
+      "author": "",
+      "url": "https://www.ft.com/content/02107c23-6c7a-4c19-b8e2-b45f4bb9ce5f",
+      "published_at": "2026-04-13T04:00:04+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Meta builds AI version of Mark Zuckerberg to interact with staff CEO is training and testing his own character as part of wider push to develop ‘personal superintelligence’",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "ai"
+      ],
+      "narrative_candidates": [
+        "AI platform competition"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 25,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "ai": 10
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "AI platform competition"
+            ]
+          },
+          "raw_before_clamp": 25.0,
+          "final": 25
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "7c9aafbd2632dcf1ea41c2c0c26957caa5d862933d2b53380a609e99ed95fc6d",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Iran threatens to hit back against Middle East ports ahead of US blockade",
+      "summary": "Donald Trump tells US navy to ‘interdict’ ships that pay Iran to pass through Strait of Hormuz",
+      "author": "",
+      "url": "https://www.ft.com/content/232417a6-b351-493f-81f3-e7b3b94ebc08",
+      "published_at": "2026-04-13T03:25:27+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Iran threatens to hit back against Middle East ports ahead of US blockade Donald Trump tells US navy to ‘interdict’ ships that pay Iran to pass through Strait of Hormuz",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "ebe25b3ac631bbd0145c8655d59faea5238e90e23bf5754238c79a6ef7d7f7b7",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "The risks of Trump’s Strait of Hormuz blockade plan",
+      "summary": "Naval embargo designed to cut off Iran’s exports threatens to destabilise global energy markets",
+      "author": "",
+      "url": "https://www.ft.com/content/54003e09-03dd-4a45-90d3-98354f8aadfb",
+      "published_at": "2026-04-13T04:46:54+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "The risks of Trump’s Strait of Hormuz blockade plan Naval embargo designed to cut off Iran’s exports threatens to destabilise global energy markets",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "50a4cb596055f8449c7d50fb07089deb79fc7f3b59fa48d7e04ff162d7c1b250",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "EU ties €35bn fund release to Hungary’s break with Orbán era",
+      "summary": "Brussels links unfreezing of funds to 27 conditions it expects incoming prime minister Péter Magyar to deliver on",
+      "author": "",
+      "url": "https://www.ft.com/content/7c8b5371-313f-4db6-aec8-0d19c5535f8c",
+      "published_at": "2026-04-13T11:09:14+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "EU ties €35bn fund release to Hungary’s break with Orbán era Brussels links unfreezing of funds to 27 conditions it expects incoming prime minister Péter Magyar to deliver on",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 0,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 0,
+            "points": 0
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 0,
+            "points": 0,
+            "labels_used": []
+          },
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "e5a6c6aa971b8563db11432dc9fe810616a541b1caa5fa1270165db8bf5976d0",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Bets against US stocks will have ‘wind at their backs’, says Carson Block",
+      "summary": "Muddy Waters founder says bets against US stocks will have ‘wind at their backs’ as technology upends markets",
+      "author": "",
+      "url": "https://www.ft.com/content/83b4d584-686b-4228-a59e-79f15c7510b7",
+      "published_at": "2026-04-13T04:00:04+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Bets against US stocks will have ‘wind at their backs’, says Carson Block Muddy Waters founder says bets against US stocks will have ‘wind at their backs’ as technology upends markets",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 15,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 15.0,
+          "final": 15
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "7b337aaba9e2566300ed94235e3f2be2df1f63f2e3fabe73ad53881bea95e7e0",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Sotheby’s offers to pay sellers interest as art market struggles",
+      "summary": "Patrick Drahi-owned auction house contends with heavy debt burden in shrinking market",
+      "author": "",
+      "url": "https://www.ft.com/content/b240451c-ab9a-4115-b8f3-106e70d90f84",
+      "published_at": "2026-04-13T04:00:04+00:00",
+      "fetched_at": "2026-04-13T12:28:02.804958+00:00",
+      "content_text": "Sotheby’s offers to pay sellers interest as art market struggles Patrick Drahi-owned auction house contends with heavy debt burden in shrinking market",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "markets"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 15,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 15.0,
+          "final": 15
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "1e45d473083dd3437e1d3dd0139950c90ff035f41d69b9892f80c3cd58578483",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Stocks Drop as Oil Tops $100 and Goldman Slides: Markets Wrap",
+      "summary": "Oil jumped above $100 a barrel while stocks and bonds fell after President Donald Trump ordered a blockade of the Strait of Hormuz following the weekend’s deadlock in US-Iran peace talks. Goldman Sachs Group Inc. shares dropped in an underwhelming start to the earnings season.",
+      "author": "Andre Janse Van Vuuren, Julien Ponthus",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/oil-surges-us-futures-drop-on-hormuz-blockade-markets-wrap",
+      "published_at": "2026-04-12T22:08:38+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Stocks Drop as Oil Tops $100 and Goldman Slides: Markets Wrap Oil jumped above $100 a barrel while stocks and bonds fell after President Donald Trump ordered a blockade of the Strait of Hormuz following the weekend’s deadlock in US-Iran peace talks. Goldman Sachs Group Inc. shares dropped in an underwhelming start to the earnings season.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "energy",
+        "equities",
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 85,
+      "signal_score": 56,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 5,
+            "points": 35
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 4,
+            "points": 24,
+            "labels_used": [
+              "energy supply shock risk",
+              "bank earnings strength",
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 85.0,
+          "final": 85
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32,
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "critical"
+    },
+    {
+      "article_id": "bd89c4d9a9d071b602c41b378943886cf118dccfb57d2fc428b9f117f9e701b2",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Hungary’s Magyar Calls for Swift Transition of Power After Vote",
+      "summary": "Peter Magyar called on Hungary’s president to ensure a swift transition of power after Prime Minister Viktor Orban’s party suffered a landslide election loss on Sunday.",
+      "author": "Thomas Escritt, Marton Kasnyik",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/hungary-s-magyar-calls-for-swift-transition-of-power-after-vote",
+      "published_at": "2026-04-13T12:20:16+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Hungary’s Magyar Calls for Swift Transition of Power After Vote Peter Magyar called on Hungary’s president to ensure a swift transition of power after Prime Minister Viktor Orban’s party suffered a landslide election loss on Sunday.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 0,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 0,
+            "points": 0
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 0,
+            "points": 0,
+            "labels_used": []
+          },
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "4d42e9a95419ae75ca2fa0fa33dc223a712415016f2fbde653bedac4bc93f2cd",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Lafarge Fined €5.7 Million, Ex-CEO Jailed for Terrorist Payments",
+      "summary": "Holcim Ltd.’s Lafarge was fined nearly €5.7 million ($6.7 million) and its former chief executive was jailed for 6 years after being found guilty of making payments to terrorist organizations to keep open a cement plant during the civil war in Syria.",
+      "author": "Gaspard Sebag",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/holcim-s-lafarge-found-guilty-over-syria-terrorist-payments",
+      "published_at": "2026-04-13T10:37:07+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Lafarge Fined €5.7 Million, Ex-CEO Jailed for Terrorist Payments Holcim Ltd.’s Lafarge was fined nearly €5.7 million ($6.7 million) and its former chief executive was jailed for 6 years after being found guilty of making payments to terrorist organizations to keep open a cement plant during the civil war in Syria.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 29,
+      "signal_score": 0,
+      "risk_score": 34,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 29.0,
+          "final": 29
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 34.0,
+          "final": 34
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "26c0caa2a666f386f0b3f7f938ed3a4dcc1f841968b95cb0632c5c20dc08f446",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Goldman Bond Traders Miss Even as Stocks Team Beats Record",
+      "summary": "Goldman Sachs Group Inc.’s equity traders beat their own previous all-time quarterly high by more than $1 billion, as the war in Iran fueled market volatility, offsetting a disappointing haul by their fixed-income colleagues.",
+      "author": "Todd Gillespie",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/goldman-stock-traders-trounce-wall-street-record-by-1-billion",
+      "published_at": "2026-04-13T11:27:53+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Goldman Bond Traders Miss Even as Stocks Team Beats Record Goldman Sachs Group Inc.’s equity traders beat their own previous all-time quarterly high by more than $1 billion, as the war in Iran fueled market volatility, offsetting a disappointing haul by their fixed-income colleagues.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities",
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 66,
+      "signal_score": 24,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 4,
+            "points": 28
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 3,
+            "points": 24,
+            "labels_used": [
+              "bank earnings strength",
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 66.0,
+          "final": 66
+        },
+        "signal": {
+          "combinations": {
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 24.0,
+          "final": 24
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16,
+            "volatility": 12
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "8eb77a1338660fe7e125224883f7e1aa40561230b362da65f08abad7b278b892",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Morgan Stanley Says Earnings Shield S&amp;P 500 From Iran War",
+      "summary": "Accelerating earnings are protecting the S&P 500 from deeper losses and masking a broader pullback in US equities, according to strategists at Morgan Stanley.",
+      "author": "Levin Stamm",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/morgan-stanley-says-earnings-shield-s-p-500-from-iran-war",
+      "published_at": "2026-04-13T09:42:33+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Morgan Stanley Says Earnings Shield S&amp;P 500 From Iran War Accelerating earnings are protecting the S&P 500 from deeper losses and masking a broader pullback in US equities, according to strategists at Morgan Stanley.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 59,
+      "signal_score": 24,
+      "risk_score": 34,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 3,
+            "points": 21
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 3,
+            "points": 24,
+            "labels_used": [
+              "bank earnings strength",
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 59.0,
+          "final": 59
+        },
+        "signal": {
+          "combinations": {
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 24.0,
+          "final": 24
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 34.0,
+          "final": 34
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "52c25bb76c8ffa6d8a2d5be7a049ce80408f323ca712ac94582c35541e3b564a",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "How Three Key Ships Moved Through Hormuz Hours Ahead of US Blockade",
+      "summary": "Here's how news of a US Navy blockade affected the movement of three ships in the Strait of Hormuz. Bloomberg's David Ingles reports. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/ships-u-turn-then-pass-strait-of-hormuz-before-blockade-video",
+      "published_at": "2026-04-13T09:12:15+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "How Three Key Ships Moved Through Hormuz Hours Ahead of US Blockade Here's how news of a US Navy blockade affected the movement of three ships in the Strait of Hormuz. Bloomberg's David Ingles reports. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "cdb4775f69d0e2090392a307e1ab4e0f42af972ba88325dbdb8212554d26627c",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "HSBC Said to Lose Second Dubai Bond Banker to Wall Street Rival",
+      "summary": "A senior Dubai-based bond banker at HSBC Holdings Plc is moving to Bank of America Corp., marking the second departure from the British lender in recent days as rivals continue to bolster staffing despite uncertainty stemming from the Iran war.",
+      "author": "Laura Gardner Cuesta",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/hsbc-said-to-lose-second-dubai-bond-banker-to-wall-street-rival",
+      "published_at": "2026-04-13T12:02:51+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "HSBC Said to Lose Second Dubai Bond Banker to Wall Street Rival A senior Dubai-based bond banker at HSBC Holdings Plc is moving to Bank of America Corp., marking the second departure from the British lender in recent days as rivals continue to bolster staffing despite uncertainty stemming from the Iran war.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 44,
+      "signal_score": 0,
+      "risk_score": 34,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 44.0,
+          "final": 44
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 34.0,
+          "final": 34
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "62a6d64f86127e25cdb4c43803405b46845807d657faf44cda2e69d75d76c674",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "OPEC Output Suffers Record Plunge as Iran War Throttles Exports",
+      "summary": "OPEC crude production registered a record plunge last month as conflict in the Middle East throttled exports from key members, the group’s data showed.",
+      "author": "Grant Smith",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/opec-output-suffers-record-plunge-as-iran-war-throttles-exports",
+      "published_at": "2026-04-13T12:00:00+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "OPEC Output Suffers Record Plunge as Iran War Throttles Exports OPEC crude production registered a record plunge last month as conflict in the Middle East throttled exports from key members, the group’s data showed.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 48,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 48.0,
+          "final": 48
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "f3d5085e8d56b7ba4880f9bd90c50a21cddfd2c2bac3a0e0040cab1c3774da98",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Stock Market Trading Shows Fear of Risk Despite Weeks of Gains",
+      "summary": "On the surface, it appears that the stock market has been on a tear for the past couple of weeks. Look under the hood, however, and you’ll see that investors are buying but without the enthusiasm that usually marks the start of a major rally.",
+      "author": "Alexandra Semenova, Youkyung Lee",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/stock-market-trading-shows-fear-of-risk-despite-weeks-of-gains",
+      "published_at": "2026-04-13T11:59:11+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Stock Market Trading Shows Fear of Risk Despite Weeks of Gains On the surface, it appears that the stock market has been on a tear for the past couple of weeks. Look under the hood, however, and you’ll see that investors are buying but without the enthusiasm that usually marks the start of a major rally.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 22,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 22.0,
+          "final": 22
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "7b4ab4694841a1d8cf10e4dafb8a946ac5e0c5b52d1236c8e5960e7717b790fd",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "US Threat to Block Iranian Oil Faces Practical Obstacles",
+      "summary": "Plans to obstruct the waterway threaten to deepen the energy supply shock.",
+      "author": "Grant Smith",
+      "url": "https://www.bloomberg.com/news/newsletters/2026-04-13/us-threat-to-block-iranian-oil-faces-practical-obstacles",
+      "published_at": "2026-04-13T11:58:21+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "US Threat to Block Iranian Oil Faces Practical Obstacles Plans to obstruct the waterway threaten to deepen the energy supply shock.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 27,
+      "signal_score": 0,
+      "risk_score": 14,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "energy": 12
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "energy supply shock risk"
+            ]
+          },
+          "raw_before_clamp": 27.0,
+          "final": 27
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "energy": 14
+          },
+          "risk_keywords": {},
+          "raw_before_clamp": 14.0,
+          "final": 14
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "37d5921e2090748553df062d2992325e086118bc8baecbcb3089850c3f01da7e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Iran Threatens Ports as Trump Vows Hormuz Blockade",
+      "summary": "Iran warned it would target all ports in and close to the Persian Gulf if its own shipping hubs are threatened, after US President Donald Trump announced plans for a blockade of Tehran-linked vessels in the Strait of Hormuz. Tyler Kendall reports on Bloomberg Television. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/iran-threatens-ports-as-trump-vows-hormuz-blockade-video",
+      "published_at": "2026-04-13T11:58:10+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Iran Threatens Ports as Trump Vows Hormuz Blockade Iran warned it would target all ports in and close to the Persian Gulf if its own shipping hubs are threatened, after US President Donald Trump announced plans for a blockade of Tehran-linked vessels in the Strait of Hormuz. Tyler Kendall reports on Bloomberg Television. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "ec26dd60e519d8b35df30f15af6568b393c16c8a9a6cb56ef5e978debb8317cc",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "US Premarket Movers: Baker Hughes, Goldman, Leggett, Replimune",
+      "summary": "S&P 500 Index futures are down 0.7% as of 7:50 a.m. in New York after President Donald Trump ordered a blockade of the Strait of Hormuz following a deadlock in peace talks with Iran.",
+      "author": "Will Daley",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/us-stock-futures-today-baker-hughes-goldman-leggett-replimune",
+      "published_at": "2026-04-13T11:54:58+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "US Premarket Movers: Baker Hughes, Goldman, Leggett, Replimune S&P 500 Index futures are down 0.7% as of 7:50 a.m. in New York after President Donald Trump ordered a blockade of the Strait of Hormuz following a deadlock in peace talks with Iran.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "energy",
+        "equities",
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 85,
+      "signal_score": 56,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 5,
+            "points": 35
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 4,
+            "points": 24,
+            "labels_used": [
+              "energy supply shock risk",
+              "bank earnings strength",
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 85.0,
+          "final": 85
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32,
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "critical"
+    },
+    {
+      "article_id": "eca1710b217e123ab1b3406523131dffa5cd47e99394d9c9e90c2304df879b58",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Orban and Aides Vanish From Sight After Hungarian Election Loss",
+      "summary": "Viktor Orban and his top lieutenants dominated Hungary’s airwaves over 16 years of his rule. But since last night’s landslide election, they are nowhere to be found.",
+      "author": "Thomas Escritt",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/orban-and-aides-vanish-from-sight-after-hungarian-election-loss",
+      "published_at": "2026-04-13T11:54:14+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Orban and Aides Vanish From Sight After Hungarian Election Loss Viktor Orban and his top lieutenants dominated Hungary’s airwaves over 16 years of his rule. But since last night’s landslide election, they are nowhere to be found.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 0,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 0,
+            "points": 0
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 0,
+            "points": 0,
+            "labels_used": []
+          },
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "879863f356f18fc0433f9c0cb0bacf1bf34128b972555b3601aadab0612f75d6",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Big US Banks Set to Temper Bond Sales After Stout 2026 Debut",
+      "summary": "The six largest US banks are expected to issue fewer bonds this quarter after the busiest start of a year on record.",
+      "author": "Yash Roy",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-10/big-us-banks-set-to-temper-bond-sales-after-strong-2026-debut",
+      "published_at": "2026-04-10T18:27:02+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Big US Banks Set to Temper Bond Sales After Stout 2026 Debut The six largest US banks are expected to issue fewer bonds this quarter after the busiest start of a year on record.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 30,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 30.0,
+          "final": 30
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "10253c12712588185ae869be28662180626ca663e293c264dedf8fa60ca3144e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Ackman’s Joint Pershing Square, Fund IPO Begins Marketing",
+      "summary": "Bill Ackman has kicked off formal marketing for the US initial public offering of his closed-end fund and his hedge fund, even as the Iran war hits dealmaking optimism.",
+      "author": "Bailey Lipschultz, Georgie McKay",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/ackman-s-joint-pershing-square-fund-ipo-begins-formal-marketing",
+      "published_at": "2026-04-13T11:33:15+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Ackman’s Joint Pershing Square, Fund IPO Begins Marketing Bill Ackman has kicked off formal marketing for the US initial public offering of his closed-end fund and his hedge fund, even as the Iran war hits dealmaking optimism.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 29,
+      "signal_score": 0,
+      "risk_score": 34,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 29.0,
+          "final": 29
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 34.0,
+          "final": 34
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "09fdd225ffdfa1d40dde268ffd29f5f17bdeca6d0b4a6b005ef3d38384fff5a9",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Hungarian Stocks and Forint Jump as Orban Loss Starts New Era",
+      "summary": "Hungary’s forint surged to a four-year high and local stocks jumped to a record after Prime Minister Viktor Orban’s election defeat. The opposition’s landslide win is buoying markets on the expectation that the result will help unlock European Union funding and revive the economy.",
+      "author": "Andras Gergely, Marton Kasnyik, Selcuk Gokoluk",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/forint-jumps-to-three-year-high-as-hungary-s-orban-is-voted-out",
+      "published_at": "2026-04-12T20:06:05+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Hungarian Stocks and Forint Jump as Orban Loss Starts New Era Hungary’s forint surged to a four-year high and local stocks jumped to a record after Prime Minister Viktor Orban’s election defeat. The opposition’s landslide win is buoying markets on the expectation that the result will help unlock European Union funding and revive the economy.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 15,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 15.0,
+          "final": 15
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "be1a1c454773d2aa45e7afc534a907066127b7a640e05f4dc2d59c90538f02ad",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Goldman Stock Traders Post Second Consecutive Quarterly Record",
+      "summary": "Goldman Sachs Group’s equity traders beat their own previous all-time high by more than $1 billion, reporting revenue of $5.33 billion for the first three months of the year. Dani Burger reports on Bloomberg Television. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/goldman-stock-traders-top-wall-street-record-by-1b-video",
+      "published_at": "2026-04-13T11:45:58+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Goldman Stock Traders Post Second Consecutive Quarterly Record Goldman Sachs Group’s equity traders beat their own previous all-time high by more than $1 billion, reporting revenue of $5.33 billion for the first three months of the year. Dani Burger reports on Bloomberg Television. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 30,
+      "signal_score": 24,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 30.0,
+          "final": 30
+        },
+        "signal": {
+          "combinations": {
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 24.0,
+          "final": 24
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "bfaeb6f07b8354ffda55548ed6c3d75e10dd7611fa3908cfbed458c439bcfc67",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "India’s Inflation Picks Up as Iran War Lifts Energy Costs",
+      "summary": "India’s inflation edged up in March as the war in the Middle East lifted crude prices and squeezed gas supplies for key industries.",
+      "author": "Anup Roy",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/india-inflation-picks-up-as-mideast-crisis-lifts-energy-costs",
+      "published_at": "2026-04-13T10:32:31+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "India’s Inflation Picks Up as Iran War Lifts Energy Costs India’s inflation edged up in March as the war in the Middle East lifted crude prices and squeezed gas supplies for key industries.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics",
+        "macro"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 83,
+      "signal_score": 32,
+      "risk_score": 62,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 3,
+            "points": 21
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "macro": 12,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 3,
+            "points": 24,
+            "labels_used": [
+              "central bank policy pressure",
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 83.0,
+          "final": 83
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14,
+            "macro": 14
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 62.0,
+          "final": 62
+        }
+      },
+      "score_bucket": "critical"
+    },
+    {
+      "article_id": "f2a33f31d4ebd24ce9a5c7f1dc44b12c3b68f2a95d0cf8b6299827b3f1e1c42e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "India’s Shapoorji Seeks to Delay Paying $1.5 Billion of Debt",
+      "summary": "Shapoorji Pallonji Group, the Indian conglomerate behind the nation’s biggest-ever private credit deal, is trying to delay paying a separate debt, people familiar with the matter said, underscoring mounting strains amid volatile markets.",
+      "author": "Dipika Lalwani, Saikat Das",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/india-s-shapoorji-seeks-to-delay-paying-1-5-billion-of-debt",
+      "published_at": "2026-04-13T11:33:43+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "India’s Shapoorji Seeks to Delay Paying $1.5 Billion of Debt Shapoorji Pallonji Group, the Indian conglomerate behind the nation’s biggest-ever private credit deal, is trying to delay paying a separate debt, people familiar with the matter said, underscoring mounting strains amid volatile markets.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 15,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "bank earnings strength"
+            ]
+          },
+          "raw_before_clamp": 15.0,
+          "final": 15
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "870b71dca64544a153b97106492f492037b9a6f427c5d307ac3be97c7fc11f1b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Harris’ 26North Raises $6 Billion for Debut Private Equity Fund",
+      "summary": "Josh Harris’ 26North Partners collected almost $6 billion for its debut private equity strategy, a US record for a first-time fundraising.",
+      "author": "Laura Benitez",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/harris-26north-raises-6-billion-for-debut-private-equity-fund",
+      "published_at": "2026-04-13T11:30:00+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Harris’ 26North Raises $6 Billion for Debut Private Equity Fund Josh Harris’ 26North Partners collected almost $6 billion for its debut private equity strategy, a US record for a first-time fundraising.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 15,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 15.0,
+          "final": 15
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "074767910321b32f8810841cfec12277d7a8d7303fb424c933a7e4ff12c91486",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Iran War: Trump Vows to Blockade Hormuz & Hungary's Orban Concedes Defeat | The Pulse 4/13",
+      "summary": "\"The Pulse With Francine Lacqua\" is all about conversations with high profile guests in the beating heart of global business, economics, finance and politics. Based in London, we go wherever the story is, bringing you exclusive interviews and market-moving scoops. Today's guests: Dan Scott, Chief Investment Officer and Head of Multi Asset at Vontobel Asset Management, Sherrill Stroschein, Politics Professor at University College London & Elisabeth Braw, Senior Fellow at the Atlantic Council. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/the-pulse-4-13-video",
+      "published_at": "2026-04-13T11:27:40+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Iran War: Trump Vows to Blockade Hormuz & Hungary's Orban Concedes Defeat | The Pulse 4/13 \"The Pulse With Francine Lacqua\" is all about conversations with high profile guests in the beating heart of global business, economics, finance and politics. Based in London, we go wherever the story is, bringing you exclusive interviews and market-moving scoops. Today's guests: Dan Scott, Chief Investment Officer and Head of Multi Asset at Vontobel Asset Management, Sherrill Stroschein, Politics Professor at University College London & Elisabeth Braw, Senior Fellow at the Atlantic Council. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 44,
+      "signal_score": 0,
+      "risk_score": 48,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 44.0,
+          "final": 44
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16,
+            "blockade": 14
+          },
+          "raw_before_clamp": 48.0,
+          "final": 48
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "ce898b486515a4820ef9022cec4894b43fcdcd0289f5b9f320e889daa163c0a5",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "China Credit Slowdown Worse Than Forecast as Loan Demand Weakens",
+      "summary": "China’s credit expansion slowed more than expected from a year earlier, as continued weakness in household and business demand holds back borrowing.",
+      "author": "Charlie Zhu, Yujing Liu",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/china-s-credit-growth-disappoints-as-weak-loan-demand-persists",
+      "published_at": "2026-04-13T09:10:02+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "China Credit Slowdown Worse Than Forecast as Loan Demand Weakens China’s credit expansion slowed more than expected from a year earlier, as continued weakness in household and business demand holds back borrowing.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 44,
+      "signal_score": 0,
+      "risk_score": 18,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 44.0,
+          "final": 44
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {},
+          "raw_before_clamp": 18.0,
+          "final": 18
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "4725bd1986734d5ec7c21252ccd2c4598dce9977b4af880b1d27f363421557ba",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Oil Rallies as US Vow to Blockade Iran Heightens Supply Risks",
+      "summary": "Oil jumped as the US vowed to blockade all vessels passing through the Strait of Hormuz that called at Iran ports or were headed there, reigniting risks to energy supplies in the region.",
+      "author": "Alex Longley, Charlie Zhu, Sarah Chen",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/latest-oil-market-news-and-analysis-for-april-13",
+      "published_at": "2026-04-12T22:01:56+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Oil Rallies as US Vow to Blockade Iran Heightens Supply Risks Oil jumped as the US vowed to blockade all vessels passing through the Strait of Hormuz that called at Iran ports or were headed there, reigniting risks to energy supplies in the region.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "b5ea8caf7ef03a6a7d2035f5492d09e7114b655c1ab638353ca86114ee87534b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Oil Rises as Trump Threatens to Blockade Hormuz; Bank Earnings Kick Off | Bloomberg Brief 4/13/2026",
+      "summary": "Global stocks and bonds slide as oil rallies back above $100 a barrel as President Trump vows to blockade the Strait of Hormuz and Iran warns that ports in and around the Persian Gulf will not be safe. Goldman Sachs set to kick off bank earnings. Ella Gude of BNY Investments Newton sees pressure for yields to persist. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/bloomberg-brief-4-13-2026-video",
+      "published_at": "2026-04-13T11:09:18+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Oil Rises as Trump Threatens to Blockade Hormuz; Bank Earnings Kick Off | Bloomberg Brief 4/13/2026 Global stocks and bonds slide as oil rallies back above $100 a barrel as President Trump vows to blockade the Strait of Hormuz and Iran warns that ports in and around the Persian Gulf will not be safe. Goldman Sachs set to kick off bank earnings. Ella Gude of BNY Investments Newton sees pressure for yields to persist. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "energy",
+        "equities",
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 85,
+      "signal_score": 56,
+      "risk_score": 46,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 5,
+            "points": 35
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 4,
+            "points": 24,
+            "labels_used": [
+              "energy supply shock risk",
+              "bank earnings strength",
+              "geopolitical escalation risk",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 85.0,
+          "final": 85
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32,
+            "banking+equities": 24
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 46.0,
+          "final": 46
+        }
+      },
+      "score_bucket": "critical"
+    },
+    {
+      "article_id": "4c020bab538dfe6b0800ddfcc806cdc62161c8e54412fdd185028e66890099b8",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Indonesia Hikes Nickel Ore Benchmark Price in Hit to Processors",
+      "summary": "Indonesia will hike benchmark prices for nickel ore, further weighing on local processors facing cost pressures from the Middle East war.",
+      "author": "Eddie Spence",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/indonesia-hikes-nickel-ore-benchmark-price-in-hit-to-processors",
+      "published_at": "2026-04-13T11:04:24+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Indonesia Hikes Nickel Ore Benchmark Price in Hit to Processors Indonesia will hike benchmark prices for nickel ore, further weighing on local processors facing cost pressures from the Middle East war.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 29,
+      "signal_score": 0,
+      "risk_score": 34,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 29.0,
+          "final": 29
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 34.0,
+          "final": 34
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "85f52758280f19b2a5dc2fcd5ba75741e40801a57a330b052c85ce0dba98fffc",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Mike Pyle on Building a Portfolio",
+      "summary": "Barry speaks with Mike Pyle, Senior Managing Director, is the Deputy Head of BlackRock’s Portfolio Management Group (PMG). They discuss the durable economic shocks that could result from the war with Iran including energy security. They also discuss his time in the Biden administration as Deputy National Security Advisor for International Economics. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/mike-pyle-on-building-a-portfolio-video",
+      "published_at": "2026-04-13T11:01:42+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Mike Pyle on Building a Portfolio Barry speaks with Mike Pyle, Senior Managing Director, is the Deputy Head of BlackRock’s Portfolio Management Group (PMG). They discuss the durable economic shocks that could result from the war with Iran including energy security. They also discuss his time in the Biden administration as Deputy National Security Advisor for International Economics. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 56,
+      "signal_score": 32,
+      "risk_score": 48,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {
+            "geopolitics": 14,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "energy supply shock risk",
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 56.0,
+          "final": 56
+        },
+        "signal": {
+          "combinations": {
+            "energy+geopolitics": 32
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18,
+            "energy": 14
+          },
+          "risk_keywords": {
+            "war": 16
+          },
+          "raw_before_clamp": 48.0,
+          "final": 48
+        }
+      },
+      "score_bucket": "high"
+    },
+    {
+      "article_id": "ea232e9c232589a61df2548889e6bdcf5c8a5bde849beb9eee43bdb87c92e23e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Where Did All the Affordable Homes Go?",
+      "summary": "Smaller, more affordable homes for first-time buyers have all but disappeared. Bloomberg Opinion columnist Scott Lincicome explains who’s to blame. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/where-did-all-the-affordable-homes-go",
+      "published_at": "2026-04-13T11:00:06+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Where Did All the Affordable Homes Go? Smaller, more affordable homes for first-time buyers have all but disappeared. Bloomberg Opinion columnist Scott Lincicome explains who’s to blame. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 0,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 0,
+            "points": 0
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 0,
+            "points": 0,
+            "labels_used": []
+          },
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "2f02b9c263aa12b9c193c68838b0c8caf9fc9952c9af7a84538b0751cc3f3f3b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Adams Street Raises $7.5 Billion for Third Private Credit Fund",
+      "summary": "Adams Street Partners LLC has raised $7.5 billion for its third private credit vehicle focused on institutional investors, more than double the size of its previous fund, even as the market grapples with a retail exodus.",
+      "author": "Paula Seligson",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/adams-street-raises-7-5-billion-for-third-private-credit-fund",
+      "published_at": "2026-04-13T11:00:00+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Adams Street Raises $7.5 Billion for Third Private Credit Fund Adams Street Partners LLC has raised $7.5 billion for its third private credit vehicle focused on institutional investors, more than double the size of its previous fund, even as the market grapples with a retail exodus.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 30,
+      "signal_score": 0,
+      "risk_score": 0,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 2,
+            "points": 14
+          },
+          "high_value_tags": {},
+          "narratives": {
+            "count": 2,
+            "points": 16,
+            "labels_used": [
+              "bank earnings strength",
+              "equity market volatility"
+            ]
+          },
+          "raw_before_clamp": 30.0,
+          "final": 30
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {},
+          "risk_keywords": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        }
+      },
+      "score_bucket": "medium"
+    },
+    {
+      "article_id": "a66da07dd2712b936a9cb8d5bd11065fe7a395baaad13c64813ae0c865990642",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Aluminum Jumps to Four-Year High on Trump’s Blockade of Hormuz",
+      "summary": "Aluminum jumped to a four-year high in London, as US President Donald Trump’s blockade of Iranian ports threatened more disruptions to shipments from the Persian Gulf.",
+      "author": "Martin Ritchie",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/copper-falls-aluminum-spreads-spike-as-us-plans-hormuz-blockade",
+      "published_at": "2026-04-13T03:03:50+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "Aluminum Jumps to Four-Year High on Trump’s Blockade of Hormuz Aluminum jumped to a four-year high in London, as US President Donald Trump’s blockade of Iranian ports threatened more disruptions to shipments from the Persian Gulf.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 29,
+      "signal_score": 0,
+      "risk_score": 32,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 1,
+            "points": 7
+          },
+          "high_value_tags": {
+            "geopolitics": 14
+          },
+          "narratives": {
+            "count": 1,
+            "points": 8,
+            "labels_used": [
+              "geopolitical escalation risk"
+            ]
+          },
+          "raw_before_clamp": 29.0,
+          "final": 29
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "geopolitics": 18
+          },
+          "risk_keywords": {
+            "blockade": 14
+          },
+          "raw_before_clamp": 32.0,
+          "final": 32
+        }
+      },
+      "score_bucket": "low"
+    },
+    {
+      "article_id": "1c5143f96758533ec0e3cbeca034c77a0a58cdc3ddc85e406fa14bc0112d5819",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "ECB’s Vujcic Says Energy Prices Are Still Very Close to Baseline",
+      "summary": "European Central Bank Governing Council member Boris Vujcic said energy costs remain near the base-case scenario, despite rising since the recent cease-fire.",
+      "author": "Jasmina Kuzmanovic",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/ecb-s-vujcic-says-energy-prices-are-still-very-close-to-baseline",
+      "published_at": "2026-04-13T10:27:55+00:00",
+      "fetched_at": "2026-04-13T12:28:03.550381+00:00",
+      "content_text": "ECB’s Vujcic Says Energy Prices Are Still Very Close to Baseline European Central Bank Governing Council member Boris Vujcic said energy costs remain near the base-case scenario, despite rising since the recent cease-fire.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "energy",
+        "macro"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "energy supply shock risk",
+        "bank earnings strength"
+      ],
+      "entities": [],
+      "ingest_type": "rss",
+      "priority_score": 69,
+      "signal_score": 0,
+      "risk_score": 28,
+      "scoring_breakdown": {
+        "priority": {
+          "tag_count": {
+            "tags_seen": 3,
+            "points": 21
+          },
+          "high_value_tags": {
+            "macro": 12,
+            "energy": 12
+          },
+          "narratives": {
+            "count": 3,
+            "points": 24,
+            "labels_used": [
+              "central bank policy pressure",
+              "energy supply shock risk",
+              "bank earnings strength"
+            ]
+          },
+          "raw_before_clamp": 69.0,
+          "final": 69
+        },
+        "signal": {
+          "combinations": {},
+          "raw_before_clamp": 0.0,
+          "final": 0
+        },
+        "risk": {
+          "tags": {
+            "energy": 14,
+            "macro": 14
+          },
+          "risk_keywords": {},
+          "raw_before_clamp": 28.0,
+          "final": 28
+        }
+      },
+      "score_bucket": "high"
+    }
+  ]
+}

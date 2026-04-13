@@ -1,0 +1,44 @@
+# Copiar a config/feeds.yaml y ajustar. Una fila `sources` por feed (ingesta PRIME).
+# VIXION_FEEDS_CONFIG apunta al YAML (por defecto busca config/feeds.yaml relativo al cwd).
+
+feeds:
+  # Feed estable para pruebas / fallback.
+  - slug: bbc-world
+    name: "BBC News — World"
+    url: "https://feeds.bbci.co.uk/news/world/rss.xml"
+
+  # Reuters (puede variar según región/CDN; quitar si falla).
+  - slug: reuters-top
+    name: "Reuters — Top News"
+    url: "https://feeds.reuters.com/reuters/topNews"
+
+  # Financial Times (home RSS; puede requerir cookies en algunos entornos).
+  - slug: ft-home
+    name: "Financial Times — Home"
+    url: "https://www.ft.com/?format=rss"
+
+  # Bloomberg — mercados (verificar URL vigente en prod).
+  - slug: bloomberg-markets
+    name: "Bloomberg — Markets"
+    url: "https://feeds.bloomberg.com/markets/news.rss"
+
+  # Cobertura solapada (mismo día / mismos temas globales) → más probabilidad de convergencia v2.
+  - slug: cnn-edition
+    name: "CNN — Edition"
+    url: "https://rss.cnn.com/rss/edition.rss"
+
+  - slug: guardian-world
+    name: "The Guardian — World"
+    url: "https://www.theguardian.com/world/rss"
+
+  - slug: npr-news
+    name: "NPR — News"
+    url: "https://feeds.npr.org/1001/rss.rss"
+
+  - slug: nyt-world
+    name: "NYTimes — World"
+    url: "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+
+  - slug: aljazeera-all
+    name: "Al Jazeera — All"
+    url: "https://www.aljazeera.com/xml/rss/all.xml"

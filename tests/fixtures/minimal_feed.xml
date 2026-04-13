@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Fixture</title>
+    <item>
+      <title>Alpha headline</title>
+      <link>https://fixture.test/item/alpha</link>
+      <description>Alpha summary body.</description>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">urn:fixture:alpha</guid>
+    </item>
+    <item>
+      <title>Beta headline</title>
+      <link>https://fixture.test/item/beta</link>
+      <description>Beta summary.</description>
+      <guid isPermaLink="false">urn:fixture:beta</guid>
+    </item>
+  </channel>
+</rss>

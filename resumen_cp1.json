@@ -1,0 +1,12 @@
+{
+  "total_reviews": 0,
+  "verdict_counts": {},
+  "verdict_pct": {
+    "good": 0.0,
+    "bad": 0.0,
+    "unsure": 0.0
+  },
+  "top_reason_codes": [],
+  "narrative_state_distribution": {},
+  "narrative_score_band_distribution": {}
+}

@@ -1,0 +1,46 @@
+{
+  "saved_at": "2026-04-13T13:30:49.497033+00:00",
+  "alert_count": 4,
+  "alerts": [
+    {
+      "alert_id": "3da7db0555171c1fcaf686127bbd841b24a4e131cc24606f2523e2234a58a734",
+      "type": "confirmed_momentum",
+      "narrative": "equity market volatility",
+      "narrative_strength": 67.5025,
+      "total_articles": 81,
+      "rss_count": 15,
+      "reddit_count": 66,
+      "created_at": "2026-04-13T13:30:49.496331+00:00"
+    },
+    {
+      "alert_id": "d6dd9a954838fc809b9a78acdaf584f098dcfe747e534e46fcf7a4c2b0758849",
+      "type": "confirmed_momentum",
+      "narrative": "geopolitical escalation risk",
+      "narrative_strength": 51.7255,
+      "total_articles": 51,
+      "rss_count": 21,
+      "reddit_count": 30,
+      "created_at": "2026-04-13T13:30:49.496331+00:00"
+    },
+    {
+      "alert_id": "0e7811f5a038b337e3ca7097814258b64461afeb48ef46a10356151fb05cc3dd",
+      "type": "confirmed_momentum",
+      "narrative": "energy supply shock risk",
+      "narrative_strength": 43.3838,
+      "total_articles": 37,
+      "rss_count": 14,
+      "reddit_count": 23,
+      "created_at": "2026-04-13T13:30:49.496331+00:00"
+    },
+    {
+      "alert_id": "46d9f2d567a1fa1bf6ef6cc82a94ebfe6e72e5c025c61d3cf80dbcb22247b02d",
+      "type": "early_opportunity",
+      "narrative": "digital asset flow narrative",
+      "narrative_strength": 28.3632,
+      "total_articles": 38,
+      "rss_count": 0,
+      "reddit_count": 38,
+      "created_at": "2026-04-13T13:30:49.496331+00:00"
+    }
+  ]
+}

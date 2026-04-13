@@ -1,0 +1,76 @@
+{
+  "saved_at": "2026-04-13T19:19:02.261754+00:00",
+  "alert_count": 7,
+  "alerts": [
+    {
+      "alert_id": "f0c1a8d02517d0fdba38e8b5bda76f17371f99e17e9ab0bf14a1c8de39be3901",
+      "type": "confirmed_momentum",
+      "narrative": "equity market volatility",
+      "narrative_strength": 67.5025,
+      "total_articles": 81,
+      "rss_count": 15,
+      "reddit_count": 66,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "a2adec8a49c73f0eace92f484fbf76453e39d09416b55b3616bd3c55e21d7541",
+      "type": "confirmed_momentum",
+      "narrative": "geopolitical escalation risk",
+      "narrative_strength": 51.7255,
+      "total_articles": 51,
+      "rss_count": 21,
+      "reddit_count": 30,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "9556738c652e0cd32ebbf56a2fde95091d18ebe72ea136761abeb75630438ee9",
+      "type": "confirmed_momentum",
+      "narrative": "energy supply shock risk",
+      "narrative_strength": 43.3838,
+      "total_articles": 37,
+      "rss_count": 14,
+      "reddit_count": 23,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "8f347e5066fa5d9614fb4ce7da7901b84dc9a39abf5d198c53651b17cae239f9",
+      "type": "early_opportunity",
+      "narrative": "digital asset flow narrative",
+      "narrative_strength": 28.3632,
+      "total_articles": 38,
+      "rss_count": 0,
+      "reddit_count": 38,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "322c8c498e3a7814ed48f096b87738b93698b9873ab8304e12ce35b2ef6c217e",
+      "type": "surge",
+      "narrative": "central bank policy pressure",
+      "surge_bucket": "surge_50",
+      "previous_strength": 19.5,
+      "current_strength": 30.6667,
+      "growth": 0.5727,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "16576a00b0115d7e4bf21c634e3d89bc394475f338ee83ffcc0fa59ea83ac7dc",
+      "type": "surge",
+      "narrative": "AI platform competition",
+      "surge_bucket": "surge_50",
+      "previous_strength": 16.4,
+      "current_strength": 24.9435,
+      "growth": 0.5209,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    },
+    {
+      "alert_id": "5dc601c61cfe9fa1934b9b638854c12bb373d5298e02a0bd0075ecf51c1a3de1",
+      "type": "surge",
+      "narrative": "policy and regulatory overhang",
+      "surge_bucket": "surge_100",
+      "previous_strength": 4.9,
+      "current_strength": 10.1143,
+      "growth": 1.0641,
+      "created_at": "2026-04-13T19:19:02.260659+00:00"
+    }
+  ]
+}

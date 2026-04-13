@@ -1,0 +1,43 @@
+[project]
+name = "vixion"
+version = "0.1.0"
+description = "VIXION narrative engine — DB migrations and core"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "alembic>=1.13.0",
+  "sqlalchemy>=2.0.0",
+  "psycopg[binary]>=3.1.0",
+  "pgvector>=0.3.0",
+  "langdetect>=1.0.9",
+  "httpx>=0.27.0",
+  "requests>=2.31.0",
+  "feedparser>=6.0.11",
+  "beautifulsoup4>=4.12.0",
+  "pyyaml>=6.0.1",
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.4.0",
+  "pytest>=8.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vixion*"]
+
+[project.scripts]
+vixion-job-runner = "vixion.workers.job_runner:main"
+vixion-ingest-rss = "vixion.ingestion.run_feeds:main"
+vixion-enqueue-rss-tick = "vixion.ops.enqueue_rss_tick:main"
+vixion-ops-status = "vixion.ops.status_cli:main"
+vixion-api = "vixion.api.cli:main"
+vixion-review = "vixion.api.review_cli:main"
+vixion-checkpoint1 = "vixion.ops.checkpoint1_cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

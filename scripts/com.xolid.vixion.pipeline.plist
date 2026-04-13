@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.xolid.vixion.pipeline</string>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>/Users/cristianbarandiaran/VIXION/scripts/run_pipeline_launchd.sh</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/cristianbarandiaran/VIXION</string>
+
+    <key>StartInterval</key>
+    <integer>1800</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/cristianbarandiaran/VIXION/logs/vixion_pipeline.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/cristianbarandiaran/VIXION/logs/vixion_pipeline.err.log</string>
+  </dict>
+</plist>

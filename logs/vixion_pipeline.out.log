@@ -1,0 +1,171 @@
+VIXION pipeline · raíz: /Users/cristianbarandiaran/VIXION
+============================================================
+
+[1/10] ▶ rss_ingest
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/rss_ingest.py
+Obteniendo Financial Times...
+  → 11 artículos
+Obteniendo Bloomberg Markets...
+  → 30 artículos
+
+========================================
+Total de artículos: 41
+========================================
+
+Ejemplos de títulos:
+  - [Financial Times] Oil supply crunch intensifies as last Hormuz tankers reach refineries
+  - [Financial Times] Trump says Iran has made contact and wants deal ‘very badly’
+  - [Financial Times] Mediators pursue Iran-US deal in back-channel diplomacy
+  - [Financial Times] Why time is on Iran’s side
+  - [Financial Times] Meta builds AI version of Mark Zuckerberg to interact with staff
+  - [Financial Times] Trump deletes ‘Jesus’ post after backlash from allies
+  - [Financial Times] Goldman bond traders take shine off bumper quarter
+  - [Financial Times] Goldman Sachs retains its knack for spinning anxiety into gold
+  - [Financial Times] Europe’s far right questions merits of Trump ties after Orbán defeat
+  - [Financial Times] Hungary’s election could support Europe’s revival trade
+  - [Financial Times] Carney’s Liberals on track to secure majority in Canadian parliament
+  - [Bloomberg Markets] Oil Gains as US Blocks Hormuz, Trump Says Iran Reached Out
+
+JSON guardado (UTF-8): /Users/cristianbarandiaran/VIXION/data/raw/rss_20260413_194757.json
+    ✓ OK (1.69s)
+
+[2/10] ▶ reddit_ingest
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/reddit_ingest.py
+VIXION pipeline · raíz: /Users/cristianbarandiaran/VIXION
+============================================================
+
+[1/10] ▶ rss_ingest
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/rss_ingest.py
+Obteniendo Financial Times...
+  → 11 artículos
+Obteniendo Bloomberg Markets...
+  → 30 artículos
+
+========================================
+Total de artículos: 41
+========================================
+
+Ejemplos de títulos:
+  - [Financial Times] Oil supply crunch intensifies as last Hormuz tankers reach refineries
+  - [Financial Times] Trump says Iran has made contact and wants deal ‘very badly’
+  - [Financial Times] Mediators pursue Iran-US deal in back-channel diplomacy
+  - [Financial Times] Why time is on Iran’s side
+  - [Financial Times] Meta builds AI version of Mark Zuckerberg to interact with staff
+  - [Financial Times] Trump deletes ‘Jesus’ post after backlash from allies
+  - [Financial Times] Goldman bond traders take shine off bumper quarter
+  - [Financial Times] Goldman Sachs retains its knack for spinning anxiety into gold
+  - [Financial Times] Europe’s far right questions merits of Trump ties after Orbán defeat
+  - [Financial Times] Hungary’s election could support Europe’s revival trade
+  - [Financial Times] SEC boss tells retail investors to ‘stay out of the kitchen’ on private credit
+  - [Bloomberg Markets] Oil Gains as US Blocks Hormuz, Trump Says Iran Reached Out
+
+JSON guardado (UTF-8): /Users/cristianbarandiaran/VIXION/data/raw/rss_20260413_194807.json
+    ✓ OK (1.38s)
+
+[2/10] ▶ reddit_ingest
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/reddit_ingest.py
+Obteniendo r/cryptocurrency…
+  → 50 posts
+Obteniendo r/wallstreetbets…
+  → 50 posts
+Obteniendo r/finance…
+  → 50 posts
+Obteniendo r/investing…
+  → 50 posts
+
+========================================
+Total posts: 200
+========================================
+
+JSON guardado (UTF-8): /Users/cristianbarandiaran/VIXION/data/raw/reddit_20260413_194811.json
+    ✓ OK (4.14s)
+
+[3/10] ▶ normalize_rss
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/normalize_rss.py
+Archivo raw leído: /Users/cristianbarandiaran/VIXION/data/raw/rss_20260413_194807.json
+Artículos procesados: 41
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/processed/rss_normalized_20260413_194811.json
+    ✓ OK (0.04s)
+
+[4/10] ▶ normalize_reddit
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/normalize_reddit.py
+Archivo raw leído: /Users/cristianbarandiaran/VIXION/data/raw/reddit_20260413_194811.json
+Posts procesados: 200
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/processed/reddit_normalized_20260413_194812.json
+    ✓ OK (0.10s)
+
+[5/10] ▶ classify_narratives (rss)
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/classify_narratives.py --source rss
+Fuente: rss
+Archivo leído: /Users/cristianbarandiaran/VIXION/data/processed/rss_normalized_20260413_194811.json
+Artículos clasificados: 41
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/classified/rss_classified_20260413_194812.json
+    ✓ OK (0.06s)
+
+[6/10] ▶ classify_narratives (reddit)
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/classify_narratives.py --source reddit
+Fuente: reddit
+Archivo leído: /Users/cristianbarandiaran/VIXION/data/processed/reddit_normalized_20260413_194812.json
+Artículos clasificados: 200
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/classified/reddit_classified_20260413_194812.json
+    ✓ OK (0.26s)
+
+[7/10] ▶ merge_sources
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/merge_sources.py
+Archivo RSS leído:    /Users/cristianbarandiaran/VIXION/data/classified/rss_classified_20260413_194812.json (41 artículos)
+Archivo Reddit leído: /Users/cristianbarandiaran/VIXION/data/classified/reddit_classified_20260413_194812.json (200 artículos)
+
+Artículos RSS:    41
+Artículos Reddit: 200
+Total combinado:  241
+
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/merged/merged_20260413_194812.json
+    ✓ OK (0.03s)
+
+[8/10] ▶ score_merged
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/score_merged.py
+Archivo leído: /Users/cristianbarandiaran/VIXION/data/merged/merged_20260413_194812.json
+Artículos puntuados: 241
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/scored/merged_scored_20260413_194812.json
+    ✓ OK (0.06s)
+
+[9/10] ▶ detect_narratives
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/detect_narratives.py
+Dataset leído (merged_scored): /Users/cristianbarandiaran/VIXION/data/scored/merged_scored_20260413_194812.json
+Narrativas detectadas: 8
+
+Top 5 por narrative_strength:
+  1. [confirmed] equity market volatility (strength=65.6026, n=78, rss=13, reddit=65)
+  2. [confirmed] geopolitical escalation risk (strength=53.8038, n=53, rss=22, reddit=31)
+  3. [confirmed] energy supply shock risk (strength=46.4829, n=41, rss=17, reddit=24)
+  4. [confirmed] central bank policy pressure (strength=32.15, n=26, rss=4, reddit=22)
+  5. [confirmed] bank earnings strength (strength=30.7143, n=28, rss=8, reddit=20)
+
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/narratives/narratives_20260413_194812.json
+    ✓ OK (0.04s)
+
+[10/10] ▶ generate_alerts
+    $ /Users/cristianbarandiaran/VIXION/.venv/bin/python /Users/cristianbarandiaran/VIXION/scripts/generate_alerts.py
+Narrativas actuales: /Users/cristianbarandiaran/VIXION/data/narratives/narratives_20260413_194812.json
+Narrativas anteriores (SURGE): /Users/cristianbarandiaran/VIXION/data/narratives/narratives_20260413_193235.json
+Candidatos: 4 (incl. surge: 0) · Nuevos (sin duplicar): 0
+
+No hay alertas nuevas (sin candidatos o ya vistas en data/alerts/).
+Archivo generado: /Users/cristianbarandiaran/VIXION/data/alerts/alerts_20260413_194812_628719.json
+    ✓ OK (0.10s)
+
+============================================================
+✓ PIPELINE COMPLETADO
+  Tiempo total: 6.23s
+  Por paso:
+    · rss_ingest: 1.38s
+    · reddit_ingest: 4.14s
+    · normalize_rss: 0.04s
+    · normalize_reddit: 0.10s
+    · classify_narratives (rss): 0.06s
+    · classify_narratives (reddit): 0.26s
+    · merge_sources: 0.03s
+    · score_merged: 0.06s
+    · detect_narratives: 0.04s
+    · generate_alerts: 0.10s
+============================================================

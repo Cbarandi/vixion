@@ -1,0 +1,33 @@
+{
+  "saved_at": "2026-04-13T13:33:42.146621+00:00",
+  "alert_count": 3,
+  "alerts": [
+    {
+      "alert_id": "1f77a9c7356978fb9c795d6afd6c330e1e5a4d65f70340ce7ba79791e4ee338d",
+      "type": "surge",
+      "narrative": "central bank policy pressure",
+      "previous_strength": 19.5,
+      "current_strength": 30.6667,
+      "growth": 0.5727,
+      "created_at": "2026-04-13T13:33:42.144761+00:00"
+    },
+    {
+      "alert_id": "78ef6b7dfe0348638f5c494357b311e035ccaafcfd993a4e4689d9cc3d0072f0",
+      "type": "surge",
+      "narrative": "AI platform competition",
+      "previous_strength": 16.4,
+      "current_strength": 24.9435,
+      "growth": 0.5209,
+      "created_at": "2026-04-13T13:33:42.144761+00:00"
+    },
+    {
+      "alert_id": "af4f3d672ba00b0c0a6574e980cefa996a05f0d26ea30ee1b7895f7a7e902bba",
+      "type": "surge",
+      "narrative": "policy and regulatory overhang",
+      "previous_strength": 4.9,
+      "current_strength": 10.1143,
+      "growth": 1.0641,
+      "created_at": "2026-04-13T13:33:42.144761+00:00"
+    }
+  ]
+}

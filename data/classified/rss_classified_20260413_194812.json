@@ -1,0 +1,947 @@
+{
+  "saved_at": "2026-04-13T19:48:12.133274+00:00",
+  "article_count": 41,
+  "articles": [
+    {
+      "article_id": "664f49248d2f150272288ad2cbcd06f93b4367a135f99dc47b40cd01fc15ffd0",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Oil supply crunch intensifies as last Hormuz tankers reach refineries",
+      "summary": "Final prewar cargoes to leave Gulf set to unload in coming days, escalating a global rush to secure barrels",
+      "author": "",
+      "url": "https://www.ft.com/content/bcd72d2a-79cc-48db-a149-076cbca22a24",
+      "published_at": "2026-04-13T18:53:38+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Oil supply crunch intensifies as last Hormuz tankers reach refineries Final prewar cargoes to leave Gulf set to unload in coming days, escalating a global rush to secure barrels",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "3672494391e1922861b8554145d7b0e48d58790302b90589fe7bd52abb76c027",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Trump says Iran has made contact and wants deal ‘very badly’",
+      "summary": "President confirms naval blockade of Strait of Hormuz has officially come into effect",
+      "author": "",
+      "url": "https://www.ft.com/content/232417a6-b351-493f-81f3-e7b3b94ebc08",
+      "published_at": "2026-04-13T17:01:20+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Trump says Iran has made contact and wants deal ‘very badly’ President confirms naval blockade of Strait of Hormuz has officially come into effect",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "7fa77a59447f59d84b7dab23e9cda1d0d29f9a232e507825800ff30ce847b65e",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Mediators pursue Iran-US deal in back-channel diplomacy",
+      "summary": "Trump says Iran representatives have ‘called’ and want a deal ‘very badly’",
+      "author": "",
+      "url": "https://www.ft.com/content/be392d6d-3db3-4062-90ce-26f28fcf3f93",
+      "published_at": "2026-04-13T18:05:30+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Mediators pursue Iran-US deal in back-channel diplomacy Trump says Iran representatives have ‘called’ and want a deal ‘very badly’",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "ce5d894142561891982ac7275fe739bbadbc45cca03104fdbdf93c55d49358c5",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Why time is on Iran’s side",
+      "summary": "A global energy crisis is only just beginning. Political turmoil will follow",
+      "author": "",
+      "url": "https://www.ft.com/content/2f1cbc7d-eeab-40e4-b940-61bf8b1e7959",
+      "published_at": "2026-04-13T10:57:15+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Why time is on Iran’s side A global energy crisis is only just beginning. Political turmoil will follow",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "4ecd6132048ea19402ce6d53eb240f8f1aa77ed20b150d8be5374ed48e870e05",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Meta builds AI version of Mark Zuckerberg to interact with staff",
+      "summary": "CEO is training and testing his own character as part of wider push to develop ‘personal superintelligence’",
+      "author": "",
+      "url": "https://www.ft.com/content/02107c23-6c7a-4c19-b8e2-b45f4bb9ce5f",
+      "published_at": "2026-04-13T04:00:04+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Meta builds AI version of Mark Zuckerberg to interact with staff CEO is training and testing his own character as part of wider push to develop ‘personal superintelligence’",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "ai"
+      ],
+      "narrative_candidates": [
+        "AI platform competition"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "7c197abbcb8957aab39b79515119c19c3d3c73fc2201d4dca94bc3f87f597b99",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Trump deletes ‘Jesus’ post after backlash from allies",
+      "summary": "US president circulated image of himself as Christ-like figure shortly after lashing out at Pope Leo",
+      "author": "",
+      "url": "https://www.ft.com/content/d3ba0017-981e-4ef8-b0e9-fc3276d5161b",
+      "published_at": "2026-04-13T18:20:19+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Trump deletes ‘Jesus’ post after backlash from allies US president circulated image of himself as Christ-like figure shortly after lashing out at Pope Leo",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "1ce5a797b8f21bd2f5e8ef9efee57452dde2bc20f44906b64f46db43f8d87225",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Goldman bond traders take shine off bumper quarter",
+      "summary": "Equities unit powers bank’s earnings, while fixed income, currencies and commodities business fall well short",
+      "author": "",
+      "url": "https://www.ft.com/content/35f3b97a-988d-4925-b550-74cda0e28717",
+      "published_at": "2026-04-13T15:13:21+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Goldman bond traders take shine off bumper quarter Equities unit powers bank’s earnings, while fixed income, currencies and commodities business fall well short",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "34bfd4b15d26a83b85881fe1c2a9e2d57134ecf1fd0d13efc97b620d3ae15325",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Goldman Sachs retains its knack for spinning anxiety into gold",
+      "summary": "AI-inspired stock routs, the war in Iran and private credit were no hindrance to the Wall Street bank",
+      "author": "",
+      "url": "https://www.ft.com/content/ec5d9079-5668-474d-b096-f11b8e580839",
+      "published_at": "2026-04-13T16:55:06+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Goldman Sachs retains its knack for spinning anxiety into gold AI-inspired stock routs, the war in Iran and private credit were no hindrance to the Wall Street bank",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "ai",
+        "banking",
+        "equities",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "AI platform competition",
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "198ab471bbca7fee4d541f90d68f777e0cbf770cf1fdda0eb31632fb071b55a6",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Europe’s far right questions merits of Trump ties after Orbán defeat",
+      "summary": "Alternative for Germany quarrels about Maga after Hungarian election fiasco",
+      "author": "",
+      "url": "https://www.ft.com/content/19335eb8-3c7a-456d-a959-0214e7fe5244",
+      "published_at": "2026-04-13T14:50:45+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Europe’s far right questions merits of Trump ties after Orbán defeat Alternative for Germany quarrels about Maga after Hungarian election fiasco",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "6dec2d8f417a2962f887a0947d0f9252c9e51b28732601ee1abdd81e2c89f8e8",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "Hungary’s election could support Europe’s revival trade",
+      "summary": "In the long run, the result may be felt far beyond Budapest",
+      "author": "",
+      "url": "https://www.ft.com/content/e2ad3853-dfe2-4bf3-9647-6ef584e8e8fc",
+      "published_at": "2026-04-13T15:21:26+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "Hungary’s election could support Europe’s revival trade In the long run, the result may be felt far beyond Budapest",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "006320f4aa5079b7809b3d3f62d58b0b81d91c0d6e982f84e2fc75bfab5d2efc",
+      "source": "Financial Times",
+      "source_type": "rss",
+      "title": "SEC boss tells retail investors to ‘stay out of the kitchen’ on private credit",
+      "summary": "Paul Atkins tells audience at spring IMF meetings that $1.8tn lending sector ‘is not a systemic risk’",
+      "author": "",
+      "url": "https://www.ft.com/content/9bde1fe8-059c-4c68-bf19-5ef7a36eab22",
+      "published_at": "2026-04-13T19:22:55+00:00",
+      "fetched_at": "2026-04-13T19:48:06.552004+00:00",
+      "content_text": "SEC boss tells retail investors to ‘stay out of the kitchen’ on private credit Paul Atkins tells audience at spring IMF meetings that $1.8tn lending sector ‘is not a systemic risk’",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "regulation"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "policy and regulatory overhang"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "785da8975589622eaf9d5b8ce70b93c268a8e87047d7ee7efe7cfe245b728440",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Oil Gains as US Blocks Hormuz, Trump Says Iran Reached Out",
+      "summary": "Oil rose after a US blockade of Iranian ports threatened to tighten global markets further, though gains were capped on signs that truce talks could still be active.",
+      "author": "Will Kubzansky, Alex Longley",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/latest-oil-market-news-and-analysis-for-april-13",
+      "published_at": "2026-04-12T22:01:56+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Oil Gains as US Blocks Hormuz, Trump Says Iran Reached Out Oil rose after a US blockade of Iranian ports threatened to tighten global markets further, though gains were capped on signs that truce talks could still be active.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "dd0b09e11b51271f12994f0d1d347c647c4e2f60d07e02d52c099e139f6f2d92",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Treasuries Rise on Oil Pullback as Trump Flags Iran Deal Talks",
+      "summary": "US Treasuries advanced after President Donald Trump said Iranian officials were seeking an agreement on terms to end the war, triggering a pullback in oil prices and a drop in the dollar.",
+      "author": "Michael MacKenzie, James Hirai",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/global-bonds-slide-as-failure-of-talks-adds-to-inflation-fears",
+      "published_at": "2026-04-13T00:56:41+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Treasuries Rise on Oil Pullback as Trump Flags Iran Deal Talks US Treasuries advanced after President Donald Trump said Iranian officials were seeking an agreement on terms to end the war, triggering a pullback in oil prices and a drop in the dollar.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "e8d169f2568daf74b0fc90fbfd814612d7b1cfe748a0cfe7a90947a833d68da4",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Inside the $20T ETF Industry, 'QQQ' Competition Heats Up | ETF IQ 4/13/2026",
+      "summary": "\"Bloomberg ETF IQ\" focuses on the opportunities, risks and current trends tied to the trillions of dollars in the global exchange traded funds industry. Today's guests: Laffer Tengler CEO & CIO Nancy Tengler, ETF.com President & Director of Research Dave Nadig, and Breakwave Advisors Managing Partner John Kartsonas. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/etf-iq-4-13-2026-video",
+      "published_at": "2026-04-13T19:31:33+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Inside the $20T ETF Industry, 'QQQ' Competition Heats Up | ETF IQ 4/13/2026 \"Bloomberg ETF IQ\" focuses on the opportunities, risks and current trends tied to the trillions of dollars in the global exchange traded funds industry. Today's guests: Laffer Tengler CEO & CIO Nancy Tengler, ETF.com President & Director of Research Dave Nadig, and Breakwave Advisors Managing Partner John Kartsonas. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "df429138173b589af2447ab2eae9c3586ba52d2f516517ae48694e4d9a73bf12",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Oncoclinicas to File for Creditor Protection on Monday",
+      "summary": "Oncoclinicas do Brasil Servicos Medicos SA said it will file for temporary court protection in Brazil on Monday as it faces mounting financial pressures.",
+      "author": "Giovanna Bellotti Azevedo, Rachel Gamarski",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/brazil-s-oncoclinicas-to-file-for-creditor-protection-on-monday",
+      "published_at": "2026-04-13T13:31:18+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Oncoclinicas to File for Creditor Protection on Monday Oncoclinicas do Brasil Servicos Medicos SA said it will file for temporary court protection in Brazil on Monday as it faces mounting financial pressures.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "6aeaeb5334e05907b4e7b0acae795a5e74b10735d88d127b723b9b5e714444c1",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "BlackRock Pivots Back to US Stocks With Strategists Seeing Iran War ‘Contained’",
+      "summary": "BlackRock strategists have returned to an overweight view on US stocks as they see the damage to global economic growth from the Middle East conflict “likely contained.”",
+      "author": "Felice Maranz",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/blackrock-pivots-back-to-us-stocks-with-iran-war-contained-mnxkskyj",
+      "published_at": "2026-04-13T19:18:32+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "BlackRock Pivots Back to US Stocks With Strategists Seeing Iran War ‘Contained’ BlackRock strategists have returned to an overweight view on US stocks as they see the damage to global economic growth from the Middle East conflict “likely contained.”",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities",
+        "geopolitics",
+        "macro"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "f5912b571a2fb031b1559480a57e2b4318a37994c7af621a824526550eacc1e2",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Stocks Extend Gains as Trump Says Iran Wants Deal: Markets Wrap",
+      "summary": "Stocks stood near session highs while oil prices pared earlier gains after President Donald Trump said Iran still wanted to make a deal following a deadlock in peace talks and a US blockade of the Strait of Hormuz. Meanwhile, Goldman Sachs Group Inc. shares dropped in an underwhelming start to the earnings season.",
+      "author": "Ira Iosebashvili, Vildana Hajric, Isabelle Lee",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/oil-surges-us-futures-drop-on-hormuz-blockade-markets-wrap",
+      "published_at": "2026-04-12T22:08:38+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Stocks Extend Gains as Trump Says Iran Wants Deal: Markets Wrap Stocks stood near session highs while oil prices pared earlier gains after President Donald Trump said Iran still wanted to make a deal following a deadlock in peace talks and a US blockade of the Strait of Hormuz. Meanwhile, Goldman Sachs Group Inc. shares dropped in an underwhelming start to the earnings season.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "energy",
+        "equities",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "816d467d070bc9421154bc056c5e3cf7a68972a05fc631446103371966511563",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "SpaceX IPO to Be Crowded Trade: Dave Nadig",
+      "summary": "Dave Nadig, president and director of research at ETF.com, joins Katie Greifeld and Eric Balchunas on \"Bloomberg ETF IQ.\" Investment bankers are hitting the road to raise more than $15 billion across initial public offerings in the coming weeks, nervously eyeing market volatility as a standoff with Iran threatens a fragile ceasefire. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/spacex-ipo-to-be-crowded-trade-dave-nadig-video",
+      "published_at": "2026-04-13T19:07:45+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "SpaceX IPO to Be Crowded Trade: Dave Nadig Dave Nadig, president and director of research at ETF.com, joins Katie Greifeld and Eric Balchunas on \"Bloomberg ETF IQ.\" Investment bankers are hitting the road to raise more than $15 billion across initial public offerings in the coming weeks, nervously eyeing market volatility as a standoff with Iran threatens a fragile ceasefire. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "19797d293e76c112df473022cd5ae467edbfe9f59971df2339988475a757a58b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "US Natural Gas Erases Gains as Traders Eye Forecasts, Storage",
+      "summary": "US natural gas futures ended down for the fourth consecutive session, erasing earlier gains as traders weighed forecasts for mild weather and a growing surplus of domestic stockpiles relative to the five-year average.",
+      "author": "Julian Hast",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/us-natural-gas-futures-rebound-on-oil-price-gain-cooler-outlook",
+      "published_at": "2026-04-13T13:48:58+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "US Natural Gas Erases Gains as Traders Eye Forecasts, Storage US natural gas futures ended down for the fourth consecutive session, erasing earlier gains as traders weighed forecasts for mild weather and a growing surplus of domestic stockpiles relative to the five-year average.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "eb132b7e672054087d4c14f795525c676b475ca72dbf763b7c2fe4382a864a8e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Blocking Hormuz Won’t Work for Trump",
+      "summary": "Trump’s blockade of the Strait of Hormuz is likely to drag the US deeper into war, instead of toward diplomacy, explains Bloomberg Opinion columnist Marc Champion. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/opinion-blocking-hormuz-won-t-work-for-trump-video",
+      "published_at": "2026-04-13T19:00:08+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Blocking Hormuz Won’t Work for Trump Trump’s blockade of the Strait of Hormuz is likely to drag the US deeper into war, instead of toward diplomacy, explains Bloomberg Opinion columnist Marc Champion. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "07e39b3d5bb28bdcd2a7b7a00b80a757e96c0a7f7bd16dac2d6f9fa5752046c0",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "UN Warns of Food Risks From Fertilizer, Energy Trade Curbs",
+      "summary": "The United Nations urged countries not to limit shipments of energy and fertilizers as the conflict in the Middle East deepens, warning that such restrictions in the past have exacerbated spikes in global food prices.",
+      "author": "Ilena Peng",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/un-warns-of-food-risks-from-fertilizer-energy-trade-curbs",
+      "published_at": "2026-04-13T18:30:38+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "UN Warns of Food Risks From Fertilizer, Energy Trade Curbs The United Nations urged countries not to limit shipments of energy and fertilizers as the conflict in the Middle East deepens, warning that such restrictions in the past have exacerbated spikes in global food prices.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "3535bac2d1b07b0cf3f66f3eec7d6e31f59131fbeca026342e21df9b5e19af3e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "The Manager Behind the Best-Performing ETF of 2026",
+      "summary": "John Kartsonas, founder and managing partner at Breakwave Advisors, joins Katie Greifeld and Eric Balchunas on \"Bloomberg ETF IQ.\" Every twist in the Iran conflict shows up almost instantly in the Breakwave Tanker Shipping ETF (ticker: BWET) that has become the best-performing ETF of 2026. The fund has gained over 1400% over the past year. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/the-manager-behind-the-best-performing-etf-of-2026-video",
+      "published_at": "2026-04-13T18:56:43+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "The Manager Behind the Best-Performing ETF of 2026 John Kartsonas, founder and managing partner at Breakwave Advisors, joins Katie Greifeld and Eric Balchunas on \"Bloomberg ETF IQ.\" Every twist in the Iran conflict shows up almost instantly in the Breakwave Tanker Shipping ETF (ticker: BWET) that has become the best-performing ETF of 2026. The fund has gained over 1400% over the past year. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "2aca8103677da87925716218e046ec8ced47b199b40ea00f55a0d71b3196ec2c",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "What to Know About the US Blockade of Iran’s Ports",
+      "summary": "Frustrated by Iran’s unwillingness to give up its strangehold over the Strait of Hormuz, US President Donald Trump is trying to force the issue. The US military announced that it had imposed a full blockage of Iran’s southern coastline, including traffic from there through the Strait of Hormuz, as of April 13.",
+      "author": "Weilun Soon, Clara Ferreira Marques, Alex Longley",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/how-would-trump-s-blockade-of-the-strait-of-hormuz-work",
+      "published_at": "2026-04-13T08:25:24+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "What to Know About the US Blockade of Iran’s Ports Frustrated by Iran’s unwillingness to give up its strangehold over the Strait of Hormuz, US President Donald Trump is trying to force the issue. The US military announced that it had imposed a full blockage of Iran’s southern coastline, including traffic from there through the Strait of Hormuz, as of April 13.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "487a5d09e5351bb2f52d29d054f4d1e30b6466622e203e16a31daae0e40ff486",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Bloomberg Surveillance 4/13/2026",
+      "summary": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to Washington and beyond. No other program better positions investors and executives for the trading day. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/bloomberg-surveillance-4-13-2026-video",
+      "published_at": "2026-04-13T18:35:35+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Bloomberg Surveillance 4/13/2026 Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to Washington and beyond. No other program better positions investors and executives for the trading day. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "markets"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "25f3b4fa6551b4af9a8b2fb45f1ad9551cc8c72070ad505808521e7294f8cfc9",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Goldman Shares Fall as Bond Trading Miss Outweighs Equity Record",
+      "summary": "Goldman Sachs Group Inc.’s surprise drop in bond- and rates-trading revenue cast a shadow over another record quarter from the bank’s equities team, prompting Chief Executive Officer David Solomon to point the finger at analysts for setting the bar so high.",
+      "author": "Todd Gillespie",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/goldman-stock-traders-trounce-wall-street-record-by-1-billion",
+      "published_at": "2026-04-13T11:27:53+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Goldman Shares Fall as Bond Trading Miss Outweighs Equity Record Goldman Sachs Group Inc.’s surprise drop in bond- and rates-trading revenue cast a shadow over another record quarter from the bank’s equities team, prompting Chief Executive Officer David Solomon to point the finger at analysts for setting the bar so high.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "equities",
+        "macro",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "bank earnings strength",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "a20f36117bbd6d6e899fcdf794000173f8a50c8d7fe8dd4ee95e9e4c8baa6270",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Two Months to get Oil Back Online is 'Optimistic,' Says Rebecca Babin",
+      "summary": "Rebecca Babin, senior equity trader and managing director at CIBC Private Wealth, said that the markets are using a two month base case as the predicted time it would take to get oil production back up and running after the end of war with Iran, a timeline she finds 'optimistic.' Babin said that even if US oil exports grows to 5 million barrels a day, it still won't be enough to fill in the supply lost to the closure of the Strait of Hormuz. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/two-months-to-get-oil-back-online-is-optimistic-babin-video",
+      "published_at": "2026-04-13T18:34:20+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Two Months to get Oil Back Online is 'Optimistic,' Says Rebecca Babin Rebecca Babin, senior equity trader and managing director at CIBC Private Wealth, said that the markets are using a two month base case as the predicted time it would take to get oil production back up and running after the end of war with Iran, a timeline she finds 'optimistic.' Babin said that even if US oil exports grows to 5 million barrels a day, it still won't be enough to fill in the supply lost to the closure of the Strait of Hormuz. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "equities",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "bb53f7418624bece5f3dec171c0b249b03b0c485b00dd49fb3908d02e303a93b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Viking, Lone Pine Alumni Shutter $2 Billion Alua Hedge Fund",
+      "summary": "Alua Capital Management is closing its $2 billion hedge fund after about five years, concluding its returns were inadequate despite some periods of strong performance.",
+      "author": "Katherine Burton",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/viking-lone-pine-alumni-shutter-2-billion-alua-hedge-fund",
+      "published_at": "2026-04-13T18:28:03+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Viking, Lone Pine Alumni Shutter $2 Billion Alua Hedge Fund Alua Capital Management is closing its $2 billion hedge fund after about five years, concluding its returns were inadequate despite some periods of strong performance.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "8c34ea58fe93c43875e8e69b2e3c6af9d7789050c9a5e43993b8634cffc871e2",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "One-Off Hits Threaten Confidence in Private Credit, Bailey Warns",
+      "summary": "Private credit funds are facing higher risks from one-off hits that could threaten confidence in the wider sector, Bank of England Governor Andrew Bailey warned on Monday.",
+      "author": "Laura Noonan",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/one-off-hits-threaten-confidence-in-private-credit-bailey-warns",
+      "published_at": "2026-04-13T18:20:30+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "One-Off Hits Threaten Confidence in Private Credit, Bailey Warns Private credit funds are facing higher risks from one-off hits that could threaten confidence in the wider sector, Bank of England Governor Andrew Bailey warned on Monday.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "22db6a252f85be93dfdf0b4e8583af888ff6eeb5bd3bcd429eb800ab8e808908",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Hormuz Strait Halts 'Extorting the Global Economy,' Says Former State Dept. Official",
+      "summary": "Heather Conley, senior fellow at the American Enterprise Institute, said the US blockade of Iran in the Strait of Hormuz is a temporary measure and won't remove all threats to shipping in the area. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/hormuz-halt-extorting-the-global-economy-conley-video",
+      "published_at": "2026-04-13T18:18:38+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Hormuz Strait Halts 'Extorting the Global Economy,' Says Former State Dept. Official Heather Conley, senior fellow at the American Enterprise Institute, said the US blockade of Iran in the Strait of Hormuz is a temporary measure and won't remove all threats to shipping in the area. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "502940fea6f641a5e71903b355cf5bb940ae2f3a6687245fa2f1ad3535d22dad",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "US Hospitals Are Emerging From Bankruptcy Only to Falter Again",
+      "summary": "The hospitals that emerged from the bankruptcies of Steward Health Care System and Prospect Medical Holdings Inc. were supposed to help stabilize one of the world’s largest hospital landlords by restoring a battered tenant base after two years of industry stress.",
+      "author": "Soma Biswas",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/us-hospitals-are-emerging-from-bankruptcy-only-to-falter-again",
+      "published_at": "2026-04-13T17:57:43+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "US Hospitals Are Emerging From Bankruptcy Only to Falter Again The hospitals that emerged from the bankruptcies of Steward Health Care System and Prospect Medical Holdings Inc. were supposed to help stabilize one of the world’s largest hospital landlords by restoring a battered tenant base after two years of industry stress.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [],
+      "narrative_candidates": [],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "2bacef69bf0cb2305902efccf95df6a0c21535ab292a9f08fb006c348414beca",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Goldman Sachs Extends Borrowing Run With $6.5 Billion Bond Sale",
+      "summary": "Goldman Sachs Group Inc. is selling $6.5 billion of US investment-grade notes on Monday, extending a borrowing spree that included a record debt offering earlier this year.",
+      "author": "Brian W Smith, Gerson Freitas Jr",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/goldman-sachs-kicks-off-three-part-investment-grade-bond-sale",
+      "published_at": "2026-04-13T13:30:32+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Goldman Sachs Extends Borrowing Run With $6.5 Billion Bond Sale Goldman Sachs Group Inc. is selling $6.5 billion of US investment-grade notes on Monday, extending a borrowing spree that included a record debt offering earlier this year.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "db7d4da6620f325eec3ede118963c244c95709d9b53fb0f2a84ec9ffebbd341b",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Gold Eases as US Plan to Blockade Hormuz Raises Inflation Risks",
+      "summary": "Gold edged down amid mounting inflation concerns after US President Donald Trump’s order to blockade the Strait of Hormuz deepened the global energy-supply shock.",
+      "author": "Yihui Xie, Preeti Soni",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-12/gold-falls-as-us-prepares-to-blockade-hormuz-after-failed-talks",
+      "published_at": "2026-04-12T22:14:19+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Gold Eases as US Plan to Blockade Hormuz Raises Inflation Risks Gold edged down amid mounting inflation concerns after US President Donald Trump’s order to blockade the Strait of Hormuz deepened the global energy-supply shock.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics",
+        "macro"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "00657a281cf9b7ab82473b63b94b2889684d399cf3c9533fbae1d27f98d27db4",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Dollar Flips to Losses After Trump Says Iran Wants a Deal",
+      "summary": "The dollar erased gains after President Donald Trump said Iran called Monday morning and wants a deal. The remarks follow Trump’s order over the weekend to block the Strait of Hormuz following the deadlock in US-Iran peace talks that pushed oil prices higher.",
+      "author": "Anya Andrianova",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/dollar-gains-as-hormuz-blockade-sparks-oil-rally-risk-off-mode",
+      "published_at": "2026-04-13T15:04:01+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Dollar Flips to Losses After Trump Says Iran Wants a Deal The dollar erased gains after President Donald Trump said Iran called Monday morning and wants a deal. The remarks follow Trump’s order over the weekend to block the Strait of Hormuz following the deadlock in US-Iran peace talks that pushed oil prices higher.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "fa842120998ec48f2c91a14601a31238026a6821b1a739dfced60f266957ad0e",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Sundheim’s D1 Hedge Fund Tumbled 6% in March as Biggest Stock Bets Soured",
+      "summary": "D1 Capital Partners’ equities book tumbled 6% in March, according to people familiar with the matter, making Dan Sundheim’s firm one of the worst-performing stock-pickers that month.",
+      "author": "Hema Parmar",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/sundheim-s-d1-tumbled-6-in-march-as-biggest-stock-bets-soured",
+      "published_at": "2026-04-13T17:44:18+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Sundheim’s D1 Hedge Fund Tumbled 6% in March as Biggest Stock Bets Soured D1 Capital Partners’ equities book tumbled 6% in March, according to people familiar with the matter, making Dan Sundheim’s firm one of the worst-performing stock-pickers that month.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "equities"
+      ],
+      "narrative_candidates": [
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "ba9eae77346355e84dbe001d994529d1cc6187727cbad62ae88fb1a5cb1cd4fb",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Austin Seeks $1 Billion of Munis for Airport Expansion Plan",
+      "summary": "Austin is set to bring a $1.18 billion airport revenue bond sale to market on Tuesday as growth in one of the nation’s fastest-expanding metro areas strains capacity at Austin-Bergstrom International Airport.",
+      "author": "Aashna Shah",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/austin-seeks-1-billion-of-munis-for-airport-expansion-plan",
+      "published_at": "2026-04-13T17:41:02+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Austin Seeks $1 Billion of Munis for Airport Expansion Plan Austin is set to bring a $1.18 billion airport revenue bond sale to market on Tuesday as growth in one of the nation’s fastest-expanding metro areas strains capacity at Austin-Bergstrom International Airport.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "macro",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "central bank policy pressure",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "071e3c3bffb52928b5c9d8731f2cccf0e810366799568da7b2811c356de9a4ca",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Oil Prices Will Soon Converge to Reflect Crisis, IEA Says",
+      "summary": "Oil prices don’t yet reflect the severity of the unprecedented supply crisis caused by the Iran war, but they soon will, the head of the International Energy Agency said.",
+      "author": "Grant Smith",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/oil-prices-will-soon-converge-to-reflect-crisis-iea-chief-says",
+      "published_at": "2026-04-13T17:17:36+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Oil Prices Will Soon Converge to Reflect Crisis, IEA Says Oil prices don’t yet reflect the severity of the unprecedented supply crisis caused by the Iran war, but they soon will, the head of the International Energy Agency said.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "a66da07dd2712b936a9cb8d5bd11065fe7a395baaad13c64813ae0c865990642",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Aluminum Jumps to Four-Year High on Trump’s Blockade of Hormuz",
+      "summary": "Aluminum jumped to a four-year high in London, as US President Donald Trump’s blockade of Iranian ports threatened more disruptions to shipments from the Persian Gulf.",
+      "author": "Martin Ritchie",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/copper-falls-aluminum-spreads-spike-as-us-plans-hormuz-blockade",
+      "published_at": "2026-04-13T03:03:50+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Aluminum Jumps to Four-Year High on Trump’s Blockade of Hormuz Aluminum jumped to a four-year high in London, as US President Donald Trump’s blockade of Iranian ports threatened more disruptions to shipments from the Persian Gulf.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "55c79f639f52ab9d36e2fc61d210bc3a2495556b632fc531f6a2e1e0b3c3dde4",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Countries That Bet On China Are Winning",
+      "summary": "Trump may have finally lost Asia to China over the Iran war. Bloomberg Opinion columnist Mihir Sharma explains. (Source: Bloomberg)",
+      "author": "",
+      "url": "https://www.bloomberg.com/news/videos/2026-04-13/opinion-countries-that-bet-on-china-are-winning-video",
+      "published_at": "2026-04-13T17:17:23+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Countries That Bet On China Are Winning Trump may have finally lost Asia to China over the Iran war. Bloomberg Opinion columnist Mihir Sharma explains. (Source: Bloomberg)",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "geopolitical escalation risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "66597290d7d0a2c0b7263753b89b2fab3b9b0fe2fbf8c7764bfc1d23b27b42ab",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Why Private Credit Is Facing a Sudden Investor Exodus",
+      "summary": "SaaSpocalypse. Credit defaults. The war in Iran. A lot of worries are hitting the $1.8 trillion private credit market at the same time, setting off a scramble by some investors to withdraw money from the industry’s giants. In recent weeks, funds managed by firms such as Apollo Global Management Inc., BlackRock Inc. and Ares Management Corp. have faced unprecedented requests for redemptions — and, in many cases, have exercised their right to block investors from getting all their money out.",
+      "author": "Paula Seligson",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/why-investors-are-exiting-private-credit-markets",
+      "published_at": "2026-04-13T17:16:56+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Why Private Credit Is Facing a Sudden Investor Exodus SaaSpocalypse. Credit defaults. The war in Iran. A lot of worries are hitting the $1.8 trillion private credit market at the same time, setting off a scramble by some investors to withdraw money from the industry’s giants. In recent weeks, funds managed by firms such as Apollo Global Management Inc., BlackRock Inc. and Ares Management Corp. have faced unprecedented requests for redemptions — and, in many cases, have exercised their right to block investors from getting all their money out.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "banking",
+        "geopolitics",
+        "markets"
+      ],
+      "narrative_candidates": [
+        "bank earnings strength",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "d05b2f5520963950bc34603bf372428268230b44c74355201deb636bbbfa8f1c",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "US Stocks Resume Gains, Close to Erasing Iran War-Driven Losses",
+      "summary": "US equities rose for the eighth time in nine sessions as investors assessed the US Naval blockade of the Strait of Hormuz that took effect Monday and parsed through earnings announcements at home.",
+      "author": "Geoffrey Morgan",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/stocks-drop-ahead-of-hormuz-blockade-as-earnings-season-begins",
+      "published_at": "2026-04-13T13:39:10+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "US Stocks Resume Gains, Close to Erasing Iran War-Driven Losses US equities rose for the eighth time in nine sessions as investors assessed the US Naval blockade of the Strait of Hormuz that took effect Monday and parsed through earnings announcements at home.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy",
+        "equities",
+        "geopolitics"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk",
+        "geopolitical escalation risk",
+        "equity market volatility"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    },
+    {
+      "article_id": "d6ac423139962bf950618390202585b1f7975fd6432dcfb52d1966e8b91d90cb",
+      "source": "Bloomberg Markets",
+      "source_type": "rss",
+      "title": "Venezuela Set to Award Oil Fields to Chevron to Help Grow Output",
+      "summary": "Chevron Corp. is set to expand its oil footprint in Venezuela, benefitting from its almost 20-year bet to remain in the country amid political and economic turmoil.",
+      "author": "Fabiola Zerpa, Eric Martin, Kevin Crowley",
+      "url": "https://www.bloomberg.com/news/articles/2026-04-13/venezuela-set-to-award-oil-fields-to-chevron-to-help-grow-output",
+      "published_at": "2026-04-13T17:08:10+00:00",
+      "fetched_at": "2026-04-13T19:48:07.312893+00:00",
+      "content_text": "Venezuela Set to Award Oil Fields to Chevron to Help Grow Output Chevron Corp. is set to expand its oil footprint in Venezuela, benefitting from its almost 20-year bet to remain in the country amid political and economic turmoil.",
+      "language": "en",
+      "asset_tags": [],
+      "topic_tags": [
+        "energy"
+      ],
+      "narrative_candidates": [
+        "energy supply shock risk"
+      ],
+      "entities": [],
+      "ingest_type": "rss"
+    }
+  ]
+}

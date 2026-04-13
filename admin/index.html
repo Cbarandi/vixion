@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VIXION — Command</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">VIXION</h1>
+      <p id="meta" class="meta"></p>
+    </header>
+
+    <section class="toolbar" aria-label="Controles">
+      <div class="toolbar__row">
+        <label class="field">
+          <span>API base</span>
+          <input type="url" id="apiBase" value="http://127.0.0.1:8002" size="28" />
+        </label>
+        <button type="button" id="btnReload" class="btn">Recargar</button>
+        <a class="link" id="docsLink" href="#" target="_blank" rel="noreferrer">OpenAPI</a>
+      </div>
+      <div class="toolbar__row">
+        <label class="field">
+          <span>Ordenar por</span>
+          <select id="sortBy">
+            <option value="priority_score">priority_score</option>
+            <option value="signal_score">signal_score</option>
+            <option value="risk_score">risk_score</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Límite artículos</span>
+          <input type="number" id="limit" min="1" max="200" value="8" />
+        </label>
+        <label class="field">
+          <span>score_bucket</span>
+          <select id="filterBucket">
+            <option value="">(todos)</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>topic_tag</span>
+          <select id="filterTag">
+            <option value="">(todos)</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <div id="error" class="error hidden" role="alert"></div>
+
+    <main class="main">
+      <section class="alerts-block alerts-block--primary" aria-labelledby="alertsHeading">
+        <div class="section-head section-head--alerts">
+          <p class="section-eyebrow">Feed</p>
+          <h2 id="alertsHeading" class="section-title section-title--xl">Alerts</h2>
+          <p class="section-sub">Ticker compacto · más reciente arriba</p>
+        </div>
+        <div id="alertsList" class="alerts-strips-host" aria-live="polite"></div>
+      </section>
+
+      <section class="narratives-block" aria-labelledby="narrativesHeading">
+        <div id="narrativeHero" class="narrative-hero" aria-live="polite"></div>
+
+        <div class="section-head section-head--tight">
+          <p class="section-eyebrow">Decision state</p>
+          <h2 id="narrativesHeading" class="section-title">Top narratives</h2>
+          <p id="narrativesMeta" class="narratives-meta"></p>
+        </div>
+        <div class="table-wrap table-wrap--narr">
+          <table class="data narratives-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Narrative</th>
+                <th>Type</th>
+                <th>Strength</th>
+                <th>Signal</th>
+                <th>Surge</th>
+                <th>Sources</th>
+              </tr>
+            </thead>
+            <tbody id="narrativesTbody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="articles-block articles-block--secondary" aria-labelledby="articlesHeading">
+        <h2 id="articlesHeading" class="section-title section-title--articles">Artículos scored</h2>
+        <p class="section-sub section-sub--articles">Capa de contexto · ajusta límite arriba si necesitas más filas</p>
+        <div class="table-wrap table-wrap--articles">
+          <table class="data data--articles">
+            <thead>
+              <tr>
+                <th>Título / fuente</th>
+                <th>Fecha</th>
+                <th>Prio</th>
+                <th>Señal</th>
+                <th>Riesgo</th>
+                <th>Bucket</th>
+                <th>Tags / narrativas</th>
+                <th>Detalle</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

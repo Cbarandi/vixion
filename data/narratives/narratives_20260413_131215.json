@@ -1,0 +1,102 @@
+{
+  "saved_at": "2026-04-13T13:12:15.951257+00:00",
+  "narrative_count": 8,
+  "narratives": [
+    {
+      "narrative": "equity market volatility",
+      "type": "confirmed",
+      "total_articles": 81,
+      "rss_count": 15,
+      "reddit_count": 66,
+      "total_weight": 61.2,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 61.2
+    },
+    {
+      "narrative": "geopolitical escalation risk",
+      "type": "confirmed",
+      "total_articles": 51,
+      "rss_count": 21,
+      "reddit_count": 30,
+      "total_weight": 42.0,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 42.0
+    },
+    {
+      "narrative": "energy supply shock risk",
+      "type": "confirmed",
+      "total_articles": 37,
+      "rss_count": 14,
+      "reddit_count": 23,
+      "total_weight": 30.1,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 30.1
+    },
+    {
+      "narrative": "digital asset flow narrative",
+      "type": "early",
+      "total_articles": 38,
+      "rss_count": 0,
+      "reddit_count": 38,
+      "total_weight": 26.6,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 26.6
+    },
+    {
+      "narrative": "bank earnings strength",
+      "type": "confirmed",
+      "total_articles": 32,
+      "rss_count": 13,
+      "reddit_count": 19,
+      "total_weight": 26.3,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 26.3
+    },
+    {
+      "narrative": "central bank policy pressure",
+      "type": "confirmed",
+      "total_articles": 27,
+      "rss_count": 2,
+      "reddit_count": 25,
+      "total_weight": 19.5,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 19.5
+    },
+    {
+      "narrative": "AI platform competition",
+      "type": "confirmed",
+      "total_articles": 23,
+      "rss_count": 1,
+      "reddit_count": 22,
+      "total_weight": 16.4,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 16.4
+    },
+    {
+      "narrative": "policy and regulatory overhang",
+      "type": "early",
+      "total_articles": 7,
+      "rss_count": 0,
+      "reddit_count": 7,
+      "total_weight": 4.9,
+      "avg_priority_score": 0.0,
+      "avg_signal_score": 0.0,
+      "avg_risk_score": 0.0,
+      "narrative_strength": 4.9
+    }
+  ]
+}

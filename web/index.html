@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VIXION — Narrative Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: white;
+      color: black;
+      border: none;
+    }
+
+    .hero {
+      padding: 100px 0;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .hero p {
+      margin-top: 20px;
+      max-width: 600px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .section {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 80px 0;
+    }
+
+    .section h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .signal-board {
+      margin-top: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 20px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .small {
+      color: rgba(255,255,255,0.4);
+      font-size: 12px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="logo">VIXION</div>
+    <div>
+      <button class="btn">Login</button>
+      <button class="btn primary">Access</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>
+      Find the narrative<br/>
+      <span>before the market.</span>
+    </h1>
+
+    <p>
+      VIXION detects early market narratives from news and social flow,
+      ranks their strength, and surfaces high-conviction signals.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn primary">Start</button>
+      <button class="btn">Live demo</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Live signals</h2>
+
+    <div class="signal-board">
+      <div class="row">
+        <div>
+          Digital asset flow narrative
+          <div class="small">Reddit</div>
+        </div>
+        <div>28.6</div>
+      </div>
+
+      <div class="row">
+        <div>
+          Geopolitical escalation risk
+          <div class="small">RSS + Reddit</div>
+        </div>
+        <div>51.7</div>
+      </div>
+
+      <div class="row">
+        <div>
+          Energy supply shock risk
+          <div class="small">RSS + Reddit</div>
+        </div>
+        <div>44.1</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Product</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="small">EARLY</div>
+        <h3>Early signals</h3>
+        <p>Detect narratives before they go mainstream.</p>
+      </div>
+
+      <div class="card">
+        <div class="small">SCORED</div>
+        <h3>Narrative strength</h3>
+        <p>Rank narratives by signal and momentum.</p>
+      </div>
+
+      <div class="card">
+        <div class="small">LIVE</div>
+        <h3>Alerts</h3>
+        <p>Receive high-conviction alerts in real time.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
