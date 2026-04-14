@@ -31,12 +31,44 @@ def test_normalize_groups_variants(agg):
     assert agg.normalize_narrative_key("  foo   bar  ") == agg.normalize_narrative_key("foo bar")
 
 
+def _dd_doc(vals: dict) -> dict:
+    return {
+        "horizons": {
+            h: {
+                "horizon_key": h,
+                "horizon_calendar_days": {"1d": 1, "3d": 3, "7d": 7}[h],
+                "status": "ok",
+                "btc_max_drawdown": vals[h],
+            }
+            for h in ("1d", "3d", "7d")
+        },
+    }
+
+
+def _ttp_doc(vals: dict) -> dict:
+    return {
+        "horizons": {
+            h: {
+                "horizon_key": h,
+                "horizon_calendar_days": {"1d": 1, "3d": 3, "7d": 7}[h],
+                "status": "ok",
+                "btc_time_to_peak_hours": vals[h],
+            }
+            for h in ("1d", "3d", "7d")
+        },
+    }
+
+
 def test_aggregate_multiple_runs_and_averages(agg, tmp_path):
     snap = tmp_path / "snapshots"
     fwd = tmp_path / "forward"
+    dd_dir = tmp_path / "drawdowns"
+    ttp_dir = tmp_path / "time_to_peak"
     lc = tmp_path / "lifecycle"
     snap.mkdir()
     fwd.mkdir()
+    dd_dir.mkdir()
+    ttp_dir.mkdir()
     lc.mkdir()
 
     (snap / "run_a.json").write_text(
@@ -100,7 +132,31 @@ def test_aggregate_multiple_runs_and_averages(agg, tmp_path):
         encoding="utf-8",
     )
 
-    out = agg.build_aggregate_payload(snap, fwd, lc, generated_at="2020-01-01T00:00:00+00:00")
+    (dd_dir / "drawdown_run_a.json").write_text(
+        json.dumps(_dd_doc({"1d": 0.08, "3d": 0.10, "7d": 0.12}), ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (dd_dir / "drawdown_run_b.json").write_text(
+        json.dumps(_dd_doc({"1d": 0.04, "3d": 0.06, "7d": 0.08}), ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (ttp_dir / "time_to_peak_run_a.json").write_text(
+        json.dumps(_ttp_doc({"1d": 1.0, "3d": 2.0, "7d": 3.0}), ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (ttp_dir / "time_to_peak_run_b.json").write_text(
+        json.dumps(_ttp_doc({"1d": 4.0, "3d": 5.0, "7d": 6.0}), ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    out = agg.build_aggregate_payload(
+        snap,
+        fwd,
+        lc,
+        dd_dir,
+        ttp_dir,
+        generated_at="2020-01-01T00:00:00+00:00",
+    )
     assert out["runs_with_snapshots"] == 2
     assert out["runs_with_forward_returns"] == 2
 
@@ -112,14 +168,27 @@ def test_aggregate_multiple_runs_and_averages(agg, tmp_path):
     assert alpha["positive_rate_1d"] == pytest.approx(0.5)
     assert alpha["count_with_returns_3d"] == 1
     assert alpha["avg_btc_return_3d"] == pytest.approx(0.20)
+    assert alpha["count_with_drawdown_1d"] == 2
+    assert alpha["avg_btc_max_drawdown_1d"] == pytest.approx(0.06)
+    assert alpha["count_with_time_to_peak_1d"] == 2
+    assert alpha["avg_btc_time_to_peak_hours_1d"] == pytest.approx(2.5)
+
+    beta = by_key["beta theme"]
+    assert beta["count_with_drawdown_7d"] == 1
+    assert beta["avg_btc_max_drawdown_7d"] == pytest.approx(0.12)
+    assert beta["avg_btc_time_to_peak_hours_7d"] == pytest.approx(3.0)
 
 
 def test_missing_forward_returns_graceful(agg, tmp_path):
     snap = tmp_path / "snapshots"
     fwd = tmp_path / "forward"
+    dd_dir = tmp_path / "drawdowns"
+    ttp_dir = tmp_path / "time_to_peak"
     lc = tmp_path / "lifecycle"
     snap.mkdir()
     fwd.mkdir()
+    dd_dir.mkdir()
+    ttp_dir.mkdir()
     lc.mkdir()
 
     (snap / "solo.json").write_text(
@@ -130,10 +199,107 @@ def test_missing_forward_returns_graceful(agg, tmp_path):
         encoding="utf-8",
     )
 
-    out = agg.build_aggregate_payload(snap, fwd, lc, generated_at="2020-01-01T00:00:00+00:00")
+    out = agg.build_aggregate_payload(
+        snap,
+        fwd,
+        lc,
+        dd_dir,
+        ttp_dir,
+        generated_at="2020-01-01T00:00:00+00:00",
+    )
     assert out["runs_with_snapshots"] == 1
     assert out["runs_with_forward_returns"] == 0
     row = out["narratives"][0]
     assert row["occurrences"] == 1
     assert row["avg_btc_return_1d"] is None
     assert row["positive_rate_1d"] is None
+    assert row["count_with_drawdown_1d"] == 0
+    assert row["avg_btc_max_drawdown_1d"] is None
+    assert row["count_with_time_to_peak_3d"] == 0
+
+
+def test_missing_drawdown_and_time_to_peak_files(agg, tmp_path):
+    snap = tmp_path / "snapshots"
+    fwd = tmp_path / "forward"
+    dd_dir = tmp_path / "drawdowns"
+    ttp_dir = tmp_path / "time_to_peak"
+    lc = tmp_path / "lifecycle"
+    for d in (snap, fwd, dd_dir, ttp_dir, lc):
+        d.mkdir()
+    (snap / "r1.json").write_text(
+        json.dumps(
+            {"narratives": [{"narrative": "solo nar", "narrative_strength": 1.0}]},
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    (fwd / "forward_returns_r1.json").write_text(
+        json.dumps({"btc_return_1d": 0.02, "btc_return_3d": 0.03, "btc_return_7d": 0.04}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (lc / "lifecycle_r1.json").write_text(json.dumps({"new": [], "rising": []}), encoding="utf-8")
+
+    out = agg.build_aggregate_payload(snap, fwd, lc, dd_dir, ttp_dir, generated_at="t")
+    row = out["narratives"][0]
+    assert row["count_with_returns_1d"] == 1
+    assert row["count_with_drawdown_1d"] == 0
+    assert row["avg_btc_max_drawdown_1d"] is None
+    assert row["count_with_time_to_peak_1d"] == 0
+    assert row["avg_btc_time_to_peak_hours_1d"] is None
+
+
+def test_drawdown_non_ok_horizon_not_counted(agg, tmp_path):
+    snap = tmp_path / "snapshots"
+    fwd = tmp_path / "forward"
+    dd_dir = tmp_path / "drawdowns"
+    ttp_dir = tmp_path / "time_to_peak"
+    lc = tmp_path / "lifecycle"
+    for d in (snap, fwd, dd_dir, ttp_dir, lc):
+        d.mkdir()
+    (snap / "r1.json").write_text(
+        json.dumps(
+            {"narratives": [{"narrative": "one", "narrative_strength": 1.0}]},
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    (fwd / "forward_returns_r1.json").write_text(
+        json.dumps({"btc_return_1d": 0.01, "btc_return_3d": 0.02, "btc_return_7d": 0.03}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (lc / "lifecycle_r1.json").write_text(json.dumps({"new": [], "rising": []}), encoding="utf-8")
+    (dd_dir / "drawdown_r1.json").write_text(
+        json.dumps(
+            {
+                "horizons": {
+                    "1d": {"status": "missing_price", "btc_max_drawdown": None},
+                    "3d": {"status": "ok", "btc_max_drawdown": 0.07},
+                    "7d": {"status": "ok", "btc_max_drawdown": 0.09},
+                },
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    (ttp_dir / "time_to_peak_r1.json").write_text(
+        json.dumps(
+            {
+                "horizons": {
+                    "1d": {"status": "missing_future", "btc_time_to_peak_hours": None},
+                    "3d": {"status": "ok", "btc_time_to_peak_hours": 5.5},
+                    "7d": {"status": "ok", "btc_time_to_peak_hours": 7.5},
+                },
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    out = agg.build_aggregate_payload(snap, fwd, lc, dd_dir, ttp_dir, generated_at="t")
+    row = out["narratives"][0]
+    assert row["count_with_drawdown_1d"] == 0
+    assert row["avg_btc_max_drawdown_1d"] is None
+    assert row["count_with_drawdown_3d"] == 1
+    assert row["avg_btc_max_drawdown_3d"] == pytest.approx(0.07)
+    assert row["count_with_time_to_peak_1d"] == 0
+    assert row["count_with_time_to_peak_3d"] == 1
+    assert row["avg_btc_time_to_peak_hours_3d"] == pytest.approx(5.5)
