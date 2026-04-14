@@ -19,6 +19,7 @@ data/scored/
 data/narratives/
 data/alerts/
 data/narrative_history/
+data/outcomes/
 
 # Temp / local files
 *.log
