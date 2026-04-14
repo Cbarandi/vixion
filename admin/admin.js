@@ -9,6 +9,14 @@ let filterOptions = { score_buckets: [], topic_tags: [], narrative_candidates: [
 
 const state = {
   surgeMap: new Map(),
+  /** Datos crudos para re-aplicar filtros sin nuevo fetch. */
+  narrativePanel: {
+    evolutionPayload: null,
+    outcomesPayload: null,
+    edgePayload: null,
+    narrData: null,
+    timelinesPayload: null,
+  },
 };
 
 /** Ficheros alerts_*.json a fusionar (debe coincidir con el default del API). */
@@ -17,6 +25,7 @@ const ALERTS_RECENT_FILES = 5;
 const EVOLUTION_MAX_NEW = 12;
 const EVOLUTION_MAX_RISING = 8;
 const EVOLUTION_MAX_FADING = 8;
+const TOP_MOVERS_LIMIT = 5;
 
 function apiBase() {
   return $("apiBase").value.replace(/\/$/, "");
@@ -83,6 +92,189 @@ async function loadNarrativesLatest() {
 async function loadNarrativeHistoryLatest() {
   try {
     const res = await fetch(`${apiBase()}/narrative-history/latest`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/** Top movers desde el último diff (no lanza si falla la API). */
+async function loadNarrativeDiffMoversLatest() {
+  try {
+    const res = await fetch(`${apiBase()}/narrative-history/diff-movers/latest`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/** Series de strength por narrativa (snapshots indexados; no lanza si falla). */
+async function loadSnapshotTimelinesLatest() {
+  try {
+    const q = new URLSearchParams({ max_runs: "8", max_narratives: "6" });
+    const res = await fetch(`${apiBase()}/narrative-history/snapshot-timelines/latest?${q}`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+function normalizeNarrativeKeyLabel(label) {
+  if (typeof label !== "string") return "";
+  return label.trim().replace(/\s+/g, " ");
+}
+
+function lifecycleItemKey(it) {
+  if (!it) return "";
+  if (typeof it.narrative_key === "string" && it.narrative_key.trim()) return it.narrative_key.trim();
+  return normalizeNarrativeKeyLabel(it.narrative);
+}
+
+function buildLifecycleKeySets(lc) {
+  const out = { newSet: new Set(), risingSet: new Set(), fadingSet: new Set() };
+  if (!lc) return out;
+  const ingest = (arr, set) => {
+    if (!Array.isArray(arr)) return;
+    for (const it of arr) {
+      const k = lifecycleItemKey(it);
+      if (k) set.add(k);
+    }
+  };
+  ingest(lc.new, out.newSet);
+  ingest(lc.rising, out.risingSet);
+  ingest(lc.fading, out.fadingSet);
+  return out;
+}
+
+function readNarrativeFiltersFromDom() {
+  const lcRaw = ($("narFilterLifecycle") && $("narFilterLifecycle").value) || "ALL";
+  const lifecycle = ["ALL", "NEW", "RISING", "FADING"].includes(lcRaw) ? lcRaw : "ALL";
+  const minOcc = Number($("narFilterMinOcc") && $("narFilterMinOcc").value);
+  const minEdge = Number($("narFilterMinEdge") && $("narFilterMinEdge").value);
+  const maxRows = Number($("narFilterMaxRows") && $("narFilterMaxRows").value);
+  const sortRaw = ($("narFilterSort") && $("narFilterSort").value) || "occurrences";
+  const sort = sortRaw === "edge" || sortRaw === "strength" ? sortRaw : "occurrences";
+  return {
+    lifecycle,
+    minOccurrences: Number.isFinite(minOcc) ? Math.max(0, minOcc) : 0,
+    minEdgeScore: Number.isFinite(minEdge) ? Math.max(0, minEdge) : 0,
+    maxRows: Number.isFinite(maxRows) ? Math.min(50, Math.max(1, maxRows)) : 12,
+    sort,
+  };
+}
+
+function buildEdgeScoreByKey(edgePayload) {
+  const map = new Map();
+  const rk = edgePayload && edgePayload.ranking;
+  const ranked = rk && Array.isArray(rk.ranked) ? rk.ranked : [];
+  const all = rk && Array.isArray(rk.all_narratives) ? rk.all_narratives : [];
+  for (const r of ranked) {
+    if (!r || typeof r.narrative_key !== "string" || !r.narrative_key.trim()) continue;
+    const s = Number(r.edge_score);
+    if (Number.isFinite(s)) map.set(r.narrative_key.trim(), s);
+  }
+  for (const r of all) {
+    if (!r || typeof r.narrative_key !== "string" || !r.narrative_key.trim()) continue;
+    const kk = r.narrative_key.trim();
+    if (map.has(kk)) continue;
+    const s = Number(r.edge_score);
+    if (Number.isFinite(s)) map.set(kk, s);
+  }
+  return map;
+}
+
+function buildStrengthByKeyFromNarratives(narrData) {
+  const map = new Map();
+  const list = narrData && Array.isArray(narrData.narratives) ? narrData.narratives : [];
+  for (const row of list) {
+    if (!row || typeof row.narrative !== "string") continue;
+    const k = normalizeNarrativeKeyLabel(row.narrative);
+    if (!k) continue;
+    const s = Number(row.narrative_strength);
+    if (Number.isFinite(s)) map.set(k, s);
+  }
+  return map;
+}
+
+function passesLifecycleFilter(narrativeKey, sets, mode, lc) {
+  if (mode === "ALL" || !lc) return true;
+  const k = narrativeKey || "";
+  if (!k) return false;
+  if (mode === "NEW") return sets.newSet.has(k);
+  if (mode === "RISING") return sets.risingSet.has(k);
+  if (mode === "FADING") return sets.fadingSet.has(k);
+  return true;
+}
+
+function passesMinEdge(narrativeKey, minEdge, edgeByKey) {
+  if (!(minEdge > 0)) return true;
+  if (!edgeByKey || edgeByKey.size === 0) return true;
+  const s = edgeByKey.get(narrativeKey);
+  return typeof s === "number" && Number.isFinite(s) && s >= minEdge;
+}
+
+function sortNarrativeRows(rows, sort, edgeByKey, strengthByKey) {
+  const keyOf = (r) => String(r.narrative_key || "");
+  rows.sort((a, b) => {
+    const ka = keyOf(a);
+    const kb = keyOf(b);
+    if (sort === "edge") {
+      const va = edgeByKey.get(ka);
+      const vb = edgeByKey.get(kb);
+      const na = Number.isFinite(va) ? va : -Infinity;
+      const nb = Number.isFinite(vb) ? vb : -Infinity;
+      if (nb !== na) return nb - na;
+    } else if (sort === "strength") {
+      const va = strengthByKey.get(ka);
+      const vb = strengthByKey.get(kb);
+      const na = Number.isFinite(va) ? va : -Infinity;
+      const nb = Number.isFinite(vb) ? vb : -Infinity;
+      if (nb !== na) return nb - na;
+    } else {
+      const na = Number(a.occurrences) || 0;
+      const nb = Number(b.occurrences) || 0;
+      if (nb !== na) return nb - na;
+    }
+    return ka.localeCompare(kb);
+  });
+}
+
+function applyNarrativePanelFilters() {
+  const p = state.narrativePanel;
+  if (!p) return;
+  const f = readNarrativeFiltersFromDom();
+  const lc =
+    p.evolutionPayload &&
+    p.evolutionPayload.lifecycle &&
+    typeof p.evolutionPayload.lifecycle === "object"
+      ? p.evolutionPayload.lifecycle
+      : null;
+  const sets = buildLifecycleKeySets(lc);
+  const edgeByKey = buildEdgeScoreByKey(p.edgePayload);
+  const strengthByKey = buildStrengthByKeyFromNarratives(p.narrData);
+  renderNarrativeEdgeTop(p.edgePayload, lc, sets, f, edgeByKey);
+  renderNarrativeOutcomesTable(p.outcomesPayload, p.edgePayload, lc, sets, f, edgeByKey, strengthByKey);
+  renderMiniTimelines(p.timelinesPayload, lc, sets, f, edgeByKey, strengthByKey);
+}
+
+/** No lanza: devuelve null si no hay agregado o falla la API. */
+async function loadNarrativeOutcomesLatest() {
+  try {
+    const res = await fetch(`${apiBase()}/outcomes/narrative-aggregates/latest`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
+/** No lanza: devuelve null si no hay ranking o falla la API. */
+async function loadNarrativeEdgeLatest() {
+  try {
+    const res = await fetch(`${apiBase()}/outcomes/narrative-edge/latest`);
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -186,6 +378,300 @@ function renderAlertStripHtml(a) {
       <div class="alert-strip__right">${right}</div>
     </div>
   `;
+}
+
+function formatRankPair(prev, curr) {
+  const pr = Number(prev);
+  const cr = Number(curr);
+  const ps = Number.isFinite(pr) ? `#${pr}` : null;
+  const cs = Number.isFinite(cr) ? `#${cr}` : null;
+  if (!ps && !cs) return "";
+  return `${ps ?? "—"}→${cs ?? "—"}`;
+}
+
+function fmtStrengthShort(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toFixed(2);
+}
+
+function renderTopMovers(moversPayload) {
+  const block = $("topMoversBlock");
+  const metaEl = $("topMoversMeta");
+  const ulR = $("topMoversRising");
+  const ulF = $("topMoversFalling");
+  if (!block || !metaEl || !ulR || !ulF) return;
+
+  const movers = moversPayload && moversPayload.movers;
+  if (!movers || typeof movers !== "object") {
+    block.hidden = true;
+    ulR.replaceChildren();
+    ulF.replaceChildren();
+    metaEl.textContent = "";
+    return;
+  }
+
+  const meta = movers.meta && typeof movers.meta === "object" ? movers.meta : {};
+  const counts = meta.counts && typeof meta.counts === "object" ? meta.counts : {};
+  const nChanged = Number(counts.changed);
+  const risingN = Array.isArray(movers.rising) ? movers.rising.length : 0;
+  const fallingN = Array.isArray(movers.falling) ? movers.falling.length : 0;
+  if (Number.isFinite(nChanged) && nChanged === 0 && risingN === 0 && fallingN === 0) {
+    block.hidden = true;
+    ulR.replaceChildren();
+    ulF.replaceChildren();
+    metaEl.textContent = "";
+    return;
+  }
+
+  block.hidden = false;
+  const src = moversPayload.source_file ? ` · ${moversPayload.source_file}` : "";
+  const parts = [];
+  if (meta.diff_generated_at) parts.push(`diff @ ${meta.diff_generated_at}`);
+  if (meta.current_run_id) parts.push(`run ${meta.current_run_id}`);
+  parts.push(`changed ${counts.changed ?? 0}`);
+  metaEl.textContent = parts.join(" · ") + src;
+
+  const buildLi = (it, dir) => {
+    const li = document.createElement("li");
+    li.className = "top-movers__item";
+    const row = document.createElement("div");
+    row.className = "top-movers__row";
+    const name = document.createElement("span");
+    name.className = "top-movers__name";
+    name.textContent = it.narrative || it.narrative_key || "—";
+    const delta = document.createElement("span");
+    delta.className = `top-movers__delta top-movers__delta--${dir}`;
+    const d = Number(it.delta_strength);
+    delta.textContent = Number.isFinite(d)
+      ? d > 0
+        ? `Δ +${d.toFixed(2)}`
+        : `Δ ${d.toFixed(2)}`
+      : "—";
+    row.appendChild(name);
+    row.appendChild(delta);
+    li.appendChild(row);
+    const detail = document.createElement("div");
+    detail.className = "top-movers__detail";
+    const rk = formatRankPair(it.previous_rank, it.current_rank);
+    const bits = [`str ${fmtStrengthShort(it.current_strength)}`];
+    if (rk) bits.push(`rnk ${rk}`);
+    detail.textContent = bits.join(" · ");
+    li.appendChild(detail);
+    return li;
+  };
+
+  const fill = (ul, items, dir, emptyMsg) => {
+    ul.replaceChildren();
+    if (!items?.length) {
+      const li = document.createElement("li");
+      li.className = "top-movers__empty";
+      li.textContent = emptyMsg;
+      ul.appendChild(li);
+      return;
+    }
+    const slice = items.slice(0, TOP_MOVERS_LIMIT);
+    for (const it of slice) {
+      ul.appendChild(buildLi(it, dir));
+    }
+  };
+
+  fill(ulR, movers.rising, "up", "Sin subidas netas (Δ strength > 0).");
+  fill(ulF, movers.falling, "down", "Sin bajadas netas (Δ strength < 0).");
+}
+
+function lastFiniteStrengthPoint(points) {
+  if (!Array.isArray(points)) return null;
+  for (let i = points.length - 1; i >= 0; i -= 1) {
+    const p = points[i];
+    if (p && Number.isFinite(Number(p.strength))) return p;
+  }
+  return null;
+}
+
+/** Sparkline SVG (sin librerías); huecos por run sin dato. */
+function miniTimelineSparklineSvg(points, runLen) {
+  const ns = "http://www.w3.org/2000/svg";
+  const w = 80;
+  const h = 24;
+  const pad = 3;
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("class", "mini-timelines__spark-svg");
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  svg.setAttribute("width", String(w));
+  svg.setAttribute("height", String(h));
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-hidden", "true");
+
+  const vals = [];
+  for (let i = 0; i < runLen; i += 1) {
+    const p = points[i];
+    const v = p && p.strength != null ? Number(p.strength) : null;
+    vals.push(Number.isFinite(v) ? v : null);
+  }
+  const finite = vals.filter((x) => x != null);
+  if (!finite.length) {
+    const t = document.createElementNS(ns, "text");
+    t.setAttribute("x", String(pad));
+    t.setAttribute("y", String(h / 2 + 3));
+    t.setAttribute("fill", "rgba(255,255,255,0.32)");
+    t.setAttribute("font-size", "9");
+    t.textContent = "—";
+    svg.appendChild(t);
+    return svg;
+  }
+
+  const minV = Math.min(...finite);
+  const maxV = Math.max(...finite);
+  const span = runLen > 1 ? w - 2 * pad : 0;
+  const xAt = (i) => (runLen <= 1 ? w / 2 : pad + (span * i) / (runLen - 1));
+  const yAt = (v) => {
+    if (maxV === minV) return h / 2;
+    const t = (v - minV) / (maxV - minV);
+    return pad + (1 - t) * (h - 2 * pad);
+  };
+
+  let d = "";
+  let pen = false;
+  for (let i = 0; i < runLen; i += 1) {
+    const v = vals[i];
+    if (v == null) {
+      pen = false;
+      continue;
+    }
+    const x = xAt(i);
+    const y = yAt(v);
+    if (!pen) {
+      d += `M${x.toFixed(2)},${y.toFixed(2)}`;
+      pen = true;
+    } else {
+      d += `L${x.toFixed(2)},${y.toFixed(2)}`;
+    }
+  }
+  if (d) {
+    const path = document.createElementNS(ns, "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", "rgba(126, 200, 255, 0.9)");
+    path.setAttribute("stroke-width", "1.35");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(path);
+  }
+  const rDot = runLen <= 3 ? 2.25 : 1.7;
+  for (let i = 0; i < runLen; i += 1) {
+    const v = vals[i];
+    if (v == null) continue;
+    const c = document.createElementNS(ns, "circle");
+    c.setAttribute("cx", String(xAt(i).toFixed(2)));
+    c.setAttribute("cy", String(yAt(v).toFixed(2)));
+    c.setAttribute("r", String(rDot));
+    c.setAttribute("fill", "rgba(210, 235, 255, 0.95)");
+    svg.appendChild(c);
+  }
+  return svg;
+}
+
+function renderMiniTimelines(tlPayload, lc, sets, f, edgeByKey, strengthByKey) {
+  const block = $("miniTimelinesBlock");
+  const metaEl = $("miniTimelinesMeta");
+  const rowsEl = $("miniTimelinesRows");
+  if (!block || !metaEl || !rowsEl) return;
+
+  if (!tlPayload || typeof tlPayload !== "object") {
+    block.hidden = true;
+    rowsEl.replaceChildren();
+    metaEl.textContent = "";
+    return;
+  }
+
+  const runs = tlPayload.runs;
+  let timelines = tlPayload.timelines;
+  if (!Array.isArray(runs) || runs.length === 0 || !Array.isArray(timelines) || timelines.length === 0) {
+    block.hidden = true;
+    rowsEl.replaceChildren();
+    metaEl.textContent = "";
+    return;
+  }
+
+  if (f && sets) {
+    timelines = timelines.filter((tl) => {
+      const key = typeof tl.narrative_key === "string" ? tl.narrative_key.trim() : "";
+      if (!key) return false;
+      if (!passesLifecycleFilter(key, sets, f.lifecycle, lc)) return false;
+      if (edgeByKey && !passesMinEdge(key, f.minEdgeScore, edgeByKey)) return false;
+      return true;
+    });
+    timelines = [...timelines];
+    const lastStr = (tl) => {
+      const p = lastFiniteStrengthPoint(tl.points);
+      const s = p && Number(p.strength);
+      return Number.isFinite(s) ? s : -Infinity;
+    };
+    timelines.sort((a, b) => {
+      const ka = String(a.narrative_key || "").trim();
+      const kb = String(b.narrative_key || "").trim();
+      if (f.sort === "edge") {
+        const va = edgeByKey && edgeByKey.get(ka);
+        const vb = edgeByKey && edgeByKey.get(kb);
+        const na = Number.isFinite(va) ? va : -Infinity;
+        const nb = Number.isFinite(vb) ? vb : -Infinity;
+        if (nb !== na) return nb - na;
+      } else if (f.sort === "strength") {
+        const na = lastStr(a);
+        const nb = lastStr(b);
+        if (nb !== na) return nb - na;
+      } else {
+        const va = strengthByKey && strengthByKey.get(ka);
+        const vb = strengthByKey && strengthByKey.get(kb);
+        const na = Number.isFinite(va) ? va : lastStr(a);
+        const nb = Number.isFinite(vb) ? vb : lastStr(b);
+        if (nb !== na) return nb - na;
+      }
+      return ka.localeCompare(kb);
+    });
+    timelines = timelines.slice(0, f.maxRows);
+  }
+
+  if (!timelines.length) {
+    block.hidden = true;
+    rowsEl.replaceChildren();
+    metaEl.textContent = "";
+    return;
+  }
+
+  block.hidden = false;
+  const idx = tlPayload.source_runs_index || "—";
+  const filt =
+    f && (f.lifecycle !== "ALL" || f.minOccurrences > 0 || f.minEdgeScore > 0) ? " · filtros" : "";
+  metaEl.textContent = `${runs.length} corridas · ${timelines.length} narrativas${filt} · ${idx}`;
+
+  rowsEl.replaceChildren();
+  for (const tl of timelines) {
+    const row = document.createElement("div");
+    row.className = "mini-timelines__row";
+    const lab = document.createElement("div");
+    lab.className = "mini-timelines__label";
+    lab.textContent = tl.narrative || tl.narrative_key || "—";
+    lab.title = tl.narrative_key || "";
+    const sparkWrap = document.createElement("div");
+    sparkWrap.className = "mini-timelines__spark";
+    sparkWrap.appendChild(miniTimelineSparklineSvg(tl.points || [], runs.length));
+    const tail = document.createElement("div");
+    tail.className = "mini-timelines__tail";
+    const last = lastFiniteStrengthPoint(tl.points);
+    if (last) {
+      const s = Number(last.strength);
+      const rk = last.rank != null && Number.isFinite(Number(last.rank)) ? `#${last.rank}` : "—";
+      tail.textContent = Number.isFinite(s) ? `${s.toFixed(2)} ${rk}` : "—";
+    } else {
+      tail.textContent = "—";
+    }
+    row.appendChild(lab);
+    row.appendChild(sparkWrap);
+    row.appendChild(tail);
+    rowsEl.appendChild(row);
+  }
 }
 
 function renderNarrativeEvolution(payload) {
@@ -326,6 +812,146 @@ function renderNarrativeEvolution(payload) {
     li.appendChild(d);
     return li;
   });
+}
+
+function fmtPct(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return `${(n * 100).toFixed(1)}%`;
+}
+
+function fmtRet(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  const pct = n * 100;
+  return `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`;
+}
+
+function renderNarrativeEdgeTop(edgePayload, lc, sets, f, edgeByKey) {
+  const el = $("outcomesEdgeStrip");
+  if (!el) return;
+  el.replaceChildren();
+  const rk = edgePayload && edgePayload.ranking;
+  const ranked = rk && Array.isArray(rk.ranked) ? [...rk.ranked] : [];
+  if (!ranked.length) {
+    el.hidden = true;
+    return;
+  }
+  const filtered = ranked.filter((r) => {
+    const key = typeof r.narrative_key === "string" ? r.narrative_key.trim() : "";
+    if (!key) return false;
+    if (!passesLifecycleFilter(key, sets, f.lifecycle, lc)) return false;
+    const occ = Number(r.occurrences);
+    if (!Number.isFinite(occ) || occ < f.minOccurrences) return false;
+    if (!passesMinEdge(key, f.minEdgeScore, edgeByKey)) return false;
+    return true;
+  });
+  sortNarrativeRows(filtered, f.sort, edgeByKey, new Map());
+  const cap = Math.min(8, f.maxRows);
+  const top = filtered.slice(0, cap);
+  if (!top.length) {
+    el.hidden = true;
+    return;
+  }
+  el.hidden = false;
+  const label = document.createElement("span");
+  label.className = "outcomes-edge-strip__label";
+  label.textContent = "Narrative edge (v1)";
+  el.appendChild(label);
+  for (let i = 0; i < top.length; i += 1) {
+    const r = top[i];
+    el.appendChild(document.createTextNode(i === 0 ? " · " : " · "));
+    const score = Number(r.edge_score);
+    const sc = Number.isFinite(score) ? score.toFixed(3) : "—";
+    const span = document.createElement("span");
+    span.textContent = `${r.narrative_key || "—"} (${sc})`;
+    el.appendChild(span);
+  }
+}
+
+function renderNarrativeOutcomesTable(
+  payload,
+  edgePayload,
+  lc,
+  sets,
+  f,
+  edgeByKey,
+  strengthByKey,
+) {
+  const meta = $("outcomesMeta");
+  const tbody = $("outcomesTbody");
+  if (!meta || !tbody) return;
+
+  tbody.innerHTML = "";
+  const agg = payload && typeof payload.aggregate === "object" ? payload.aggregate : null;
+  if (!agg || !Array.isArray(agg.narratives)) {
+    meta.textContent =
+      "Sin agregado de outcomes (ejecuta aggregate_narrative_outcomes en el pipeline).";
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 10;
+    td.className = "outcomes-empty";
+    td.textContent = "Sin datos.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+    return;
+  }
+
+  const total = agg.narratives.length;
+  let rows = agg.narratives.filter((r) => {
+    const key = typeof r.narrative_key === "string" ? r.narrative_key.trim() : "";
+    if (!key) return false;
+    if (!passesLifecycleFilter(key, sets, f.lifecycle, lc)) return false;
+    const occ = Number(r.occurrences);
+    if (!Number.isFinite(occ) || occ < f.minOccurrences) return false;
+    if (!passesMinEdge(key, f.minEdgeScore, edgeByKey)) return false;
+    return true;
+  });
+  rows = [...rows];
+  sortNarrativeRows(rows, f.sort, edgeByKey, strengthByKey);
+  rows = rows.slice(0, f.maxRows);
+
+  const filterNote =
+    f.lifecycle !== "ALL" || f.minOccurrences > 0 || f.minEdgeScore > 0 ? " · filtros activos" : "";
+  meta.textContent =
+    `Fuente: ${payload.source_file || "—"} · generated_at: ${agg.generated_at ?? "—"} · ` +
+    `narrativas (agregado): ${total} · runs con outcomes: ` +
+    `${agg.runs_with_forward_returns ?? 0}/${agg.runs_with_snapshots ?? 0} · ` +
+    `mostrando ${rows.length}${filterNote}`;
+
+  if (!rows.length) {
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 10;
+    td.className = "outcomes-empty";
+    td.textContent = "Sin filas con estos filtros.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+    return;
+  }
+
+  for (const r of rows) {
+    const tr = document.createElement("tr");
+    const cells = [
+      r.narrative_key || "—",
+      String(r.occurrences ?? "—"),
+      fmtRet(r.avg_btc_return_1d),
+      fmtRet(r.avg_btc_return_3d),
+      fmtRet(r.avg_btc_return_7d),
+      fmtPct(r.positive_rate_1d),
+      fmtPct(r.positive_rate_3d),
+      fmtPct(r.positive_rate_7d),
+      String(r.runs_tagged_new ?? 0),
+      String(r.runs_tagged_rising ?? 0),
+    ];
+    cells.forEach((text, i) => {
+      const td = document.createElement("td");
+      td.textContent = text;
+      if (i > 0) td.className = "num";
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  }
 }
 
 function renderAlertsList(alertsPayload) {
@@ -790,17 +1416,31 @@ async function reload() {
   showError("");
   $("meta").textContent = "Cargando…";
   $("narrativesMeta").textContent = "Cargando narrativas…";
+  $("outcomesMeta").textContent = "Cargando outcomes…";
 
   const alertsPayload = await loadAlertsRecent();
   state.surgeMap = buildSurgeMap(alertsPayload);
   renderAlertsList(alertsPayload);
 
   try {
-    const [filters, latest, narrData, evolutionPayload] = await Promise.all([
+    const [
+      filters,
+      latest,
+      narrData,
+      evolutionPayload,
+      moversPayload,
+      timelinesPayload,
+      outcomesPayload,
+      edgePayload,
+    ] = await Promise.all([
       loadFilters(),
       loadLatest(),
       loadNarrativesLatest(),
       loadNarrativeHistoryLatest(),
+      loadNarrativeDiffMoversLatest(),
+      loadSnapshotTimelinesLatest(),
+      loadNarrativeOutcomesLatest(),
+      loadNarrativeEdgeLatest(),
     ]);
     filterOptions = filters;
     rawArticles = Array.isArray(latest.articles) ? latest.articles : [];
@@ -814,11 +1454,29 @@ async function reload() {
 
     await loadAndRenderNarratives(narrData);
     renderNarrativeEvolution(evolutionPayload);
+    renderTopMovers(moversPayload);
+    state.narrativePanel = {
+      evolutionPayload,
+      outcomesPayload,
+      edgePayload,
+      narrData,
+      timelinesPayload,
+    };
+    applyNarrativePanelFilters();
   } catch (e) {
     $("meta").textContent = "";
     showError(e instanceof Error ? e.message : String(e));
     await loadAndRenderNarratives();
     renderNarrativeEvolution(null);
+    renderTopMovers(null);
+    state.narrativePanel = {
+      evolutionPayload: null,
+      outcomesPayload: null,
+      edgePayload: null,
+      narrData: null,
+      timelinesPayload: null,
+    };
+    applyNarrativePanelFilters();
   }
 }
 
@@ -837,6 +1495,18 @@ function wire() {
     $(id).addEventListener("change", () => render());
   });
   $("limit").addEventListener("input", () => render());
+  [
+    "narFilterLifecycle",
+    "narFilterMinOcc",
+    "narFilterMinEdge",
+    "narFilterMaxRows",
+    "narFilterSort",
+  ].forEach((id) => {
+    const el = $(id);
+    if (!el) return;
+    el.addEventListener("change", () => applyNarrativePanelFilters());
+    if (el.type === "number") el.addEventListener("input", () => applyNarrativePanelFilters());
+  });
 }
 
 wire();

@@ -9,12 +9,17 @@ from typing import Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 
+from vixion.ops.narrative_diff_movers import build_top_movers_from_diff
+from vixion.ops.snapshot_timelines import build_snapshot_timelines_payload
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SCORED_DIR = PROJECT_ROOT / "data" / "scored"
 DATA_NARRATIVES_DIR = PROJECT_ROOT / "data" / "narratives"
 DATA_ALERTS_DIR = PROJECT_ROOT / "data" / "alerts"
 DATA_NH_DIFFS = PROJECT_ROOT / "data" / "narrative_history" / "diffs"
 DATA_NH_LIFECYCLE = PROJECT_ROOT / "data" / "narrative_history" / "lifecycle"
+DATA_OUTCOMES_NARR_AGG = PROJECT_ROOT / "data" / "outcomes" / "narrative_aggregates"
+DATA_OUTCOMES_NARR_EDGE = PROJECT_ROOT / "data" / "outcomes" / "narrative_edge"
 
 SORT_FIELDS = frozenset({"priority_score", "signal_score", "risk_score"})
 
@@ -187,6 +192,119 @@ def narrative_history_latest() -> dict[str, Any]:
         except (OSError, UnicodeDecodeError, json.JSONDecodeError):
             pass
 
+    return out
+
+
+@app.get("/narrative-history/diff-movers/latest")
+def narrative_history_diff_movers_latest() -> dict[str, Any]:
+    """
+    Top movers (suben / bajan) derivados del último ``diff_*.json``.
+    Siempre 200: ``movers`` null si no hay diff o no es legible.
+    """
+    out: dict[str, Any] = {"movers": None, "source_file": None}
+    diff_path = find_latest_glob_file(DATA_NH_DIFFS, "diff_*.json")
+    if diff_path is None or not diff_path.is_file():
+        return out
+    try:
+        raw = json.loads(diff_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return out
+    if not isinstance(raw, dict):
+        return out
+    out["movers"] = build_top_movers_from_diff(raw, limit=5)
+    try:
+        out["source_file"] = str(diff_path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        out["source_file"] = str(diff_path)
+    return out
+
+
+@app.get("/narrative-history/snapshot-timelines/latest")
+def narrative_history_snapshot_timelines_latest(
+    max_runs: int = Query(8, ge=3, le=15),
+    max_narratives: int = Query(6, ge=2, le=10),
+) -> dict[str, Any]:
+    """
+    Series de ``narrative_strength`` por narrativa en las últimas corridas indexadas
+    (snapshots en disco). Siempre 200; listas vacías si no hay índice o datos.
+    """
+    idx = PROJECT_ROOT / "data" / "narrative_history" / "runs.jsonl"
+    out: dict[str, Any] = {
+        "runs": [],
+        "timelines": [],
+        "meta": {},
+        "source_runs_index": None,
+    }
+    try:
+        payload = build_snapshot_timelines_payload(
+            PROJECT_ROOT,
+            max_runs=max_runs,
+            max_narratives=max_narratives,
+        )
+    except OSError:
+        return out
+    out["runs"] = payload.get("runs") or []
+    out["timelines"] = payload.get("timelines") or []
+    out["meta"] = payload.get("meta") or {}
+    if idx.is_file():
+        try:
+            out["source_runs_index"] = str(idx.relative_to(PROJECT_ROOT))
+        except ValueError:
+            out["source_runs_index"] = str(idx)
+    return out
+
+
+@app.get("/outcomes/narrative-aggregates/latest")
+def outcomes_narrative_aggregates_latest() -> dict[str, Any]:
+    """
+    Último agregado narrativo de outcomes (latest.json). Siempre 200:
+    si no existe o está corrupto, devuelve aggregate=null.
+    """
+    path = DATA_OUTCOMES_NARR_AGG / "latest.json"
+    out: dict[str, Any] = {
+        "aggregate": None,
+        "source_file": None,
+    }
+    if not path.is_file():
+        return out
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return out
+    if not isinstance(payload, dict):
+        return out
+    out["aggregate"] = payload
+    try:
+        out["source_file"] = str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        out["source_file"] = str(path)
+    return out
+
+
+@app.get("/outcomes/narrative-edge/latest")
+def outcomes_narrative_edge_latest() -> dict[str, Any]:
+    """
+    Último ranking narrative edge (latest.json). Siempre 200:
+    si no existe o está corrupto, devuelve ranking=null.
+    """
+    path = DATA_OUTCOMES_NARR_EDGE / "latest.json"
+    out: dict[str, Any] = {
+        "ranking": None,
+        "source_file": None,
+    }
+    if not path.is_file():
+        return out
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return out
+    if not isinstance(payload, dict):
+        return out
+    out["ranking"] = payload
+    try:
+        out["source_file"] = str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        out["source_file"] = str(path)
     return out
 
 

@@ -36,6 +36,8 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from vixion.utils.run_ids import run_id_from_saved_at
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_NARRATIVES_DIR = PROJECT_ROOT / "data" / "narratives"
@@ -48,19 +50,6 @@ def normalize_narrative_key(label: str) -> str:
     """Identidad: strip + espacios internos colapsados a un solo espacio."""
     s = label.strip()
     return re.sub(r"\s+", " ", s)
-
-
-def run_id_from_saved_at(iso_str: str) -> str:
-    """ID estable por instante UTC: YYYYMMDD_HHMMSS_microseconds."""
-    raw = iso_str.strip()
-    if raw.endswith("Z"):
-        raw = raw[:-1] + "+00:00"
-    dt = datetime.fromisoformat(raw)
-    if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=UTC)
-    else:
-        dt = dt.astimezone(UTC)
-    return dt.strftime("%Y%m%d_%H%M%S_%f")
 
 
 def find_latest_narratives_file() -> Path:

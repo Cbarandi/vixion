@@ -36,7 +36,11 @@ STEPS: list[tuple[str, list[str]]] = [
     ("score_merged", _cmd("score_merged.py")),
     ("detect_narratives", _cmd("detect_narratives.py")),
     ("persist_narrative_history", _cmd("persist_narrative_history.py")),
+    ("persist_market_context", _cmd("persist_market_context.py")),
+    ("compute_forward_returns", _cmd("compute_forward_returns.py")),
     ("classify_narrative_lifecycle", _cmd("classify_narrative_lifecycle.py")),
+    ("aggregate_narrative_outcomes", _cmd("aggregate_narrative_outcomes.py")),
+    ("rank_narrative_edge", _cmd("rank_narrative_edge.py")),
     ("generate_alerts", _cmd("generate_alerts.py")),
 ]
 

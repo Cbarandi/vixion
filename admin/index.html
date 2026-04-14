@@ -68,6 +68,29 @@
           <p id="evolutionSummary" class="evolution-summary"></p>
         </div>
         <p id="evolutionDiffLine" class="evolution-diff-line" aria-live="polite"></p>
+        <div id="topMoversBlock" class="top-movers" hidden aria-labelledby="topMoversHeading">
+          <div class="top-movers__head">
+            <h3 id="topMoversHeading" class="top-movers__title">Top movers</h3>
+            <p id="topMoversMeta" class="top-movers__meta"></p>
+          </div>
+          <div class="top-movers__cols">
+            <div class="top-movers__col top-movers__col--up">
+              <h4 class="top-movers__col-title">Suben (Δ strength)</h4>
+              <ul id="topMoversRising" class="top-movers__list"></ul>
+            </div>
+            <div class="top-movers__col top-movers__col--down">
+              <h4 class="top-movers__col-title">Bajan (Δ strength)</h4>
+              <ul id="topMoversFalling" class="top-movers__list"></ul>
+            </div>
+          </div>
+        </div>
+        <div id="miniTimelinesBlock" class="mini-timelines" hidden aria-labelledby="miniTimelinesHeading">
+          <div class="mini-timelines__head">
+            <h3 id="miniTimelinesHeading" class="mini-timelines__title">Strength reciente</h3>
+            <p id="miniTimelinesMeta" class="mini-timelines__meta"></p>
+          </div>
+          <div id="miniTimelinesRows" class="mini-timelines__rows"></div>
+        </div>
         <div class="evolution-cols">
           <div class="evolution-col">
             <h3 class="evolution-col__title">Nuevo</h3>
@@ -81,6 +104,66 @@
             <h3 class="evolution-col__title">Fading</h3>
             <ul id="evolutionFading" class="evolution-list"></ul>
           </div>
+        </div>
+      </section>
+
+      <section class="outcomes-block" aria-labelledby="outcomesHeading">
+        <div class="narrative-filters-bar" aria-label="Filtros narrativa (outcomes, edge, timelines)">
+          <span class="narrative-filters-bar__label">Filtros</span>
+          <label class="narrative-filters-bar__field">
+            <span>Ciclo</span>
+            <select id="narFilterLifecycle">
+              <option value="ALL">Todos</option>
+              <option value="NEW">NEW</option>
+              <option value="RISING">RISING</option>
+              <option value="FADING">FADING</option>
+            </select>
+          </label>
+          <label class="narrative-filters-bar__field">
+            <span>Min occ.</span>
+            <input id="narFilterMinOcc" type="number" min="0" step="1" value="0" />
+          </label>
+          <label class="narrative-filters-bar__field">
+            <span>Min edge</span>
+            <input id="narFilterMinEdge" type="number" min="0" step="0.01" value="0" />
+          </label>
+          <label class="narrative-filters-bar__field">
+            <span>Filas máx.</span>
+            <input id="narFilterMaxRows" type="number" min="1" max="50" step="1" value="12" />
+          </label>
+          <label class="narrative-filters-bar__field">
+            <span>Orden</span>
+            <select id="narFilterSort">
+              <option value="occurrences">Ocurrencias</option>
+              <option value="edge">Edge score</option>
+              <option value="strength">Strength (último)</option>
+            </select>
+          </label>
+        </div>
+        <div class="section-head section-head--tight">
+          <p class="section-eyebrow">Outcome engine</p>
+          <h2 id="outcomesHeading" class="section-title">Narrative outcomes</h2>
+          <p id="outcomesMeta" class="outcomes-meta"></p>
+          <p id="outcomesEdgeStrip" class="outcomes-edge-strip" hidden aria-live="polite"></p>
+        </div>
+        <div class="table-wrap table-wrap--outcomes">
+          <table class="data outcomes-table">
+            <thead>
+              <tr>
+                <th>Narrative</th>
+                <th>Occ.</th>
+                <th>Avg BTC 1d</th>
+                <th>Avg BTC 3d</th>
+                <th>Avg BTC 7d</th>
+                <th>Pos 1d</th>
+                <th>Pos 3d</th>
+                <th>Pos 7d</th>
+                <th>NEW</th>
+                <th>RISING</th>
+              </tr>
+            </thead>
+            <tbody id="outcomesTbody"></tbody>
+          </table>
         </div>
       </section>
 
