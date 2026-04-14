@@ -255,6 +255,7 @@ function applyNarrativePanelFilters() {
   const sets = buildLifecycleKeySets(lc);
   const edgeByKey = buildEdgeScoreByKey(p.edgePayload);
   const strengthByKey = buildStrengthByKeyFromNarratives(p.narrData);
+  renderOutcomeEngineMaturity(p.outcomesPayload, p.edgePayload);
   renderNarrativeEdgeTop(p.edgePayload, lc, sets, f, edgeByKey);
   renderNarrativeOutcomesTable(p.outcomesPayload, p.edgePayload, lc, sets, f, edgeByKey, strengthByKey);
   renderMiniTimelines(p.timelinesPayload, lc, sets, f, edgeByKey, strengthByKey);
@@ -844,6 +845,81 @@ function ttpCountTitle(row, h) {
   const k = `count_with_time_to_peak_${h}`;
   const n = Number(row[k]);
   return Number.isFinite(n) && n > 0 ? `Muestras TTP ${h}: n=${n}` : "";
+}
+
+const OUTCOME_FR_HORIZONS = ["1d", "3d", "7d"];
+
+/**
+ * Estado de madurez del outcome engine (solo lectura de agregado + ranking edge).
+ */
+function renderOutcomeEngineMaturity(outcomesPayload, edgePayload) {
+  const wrap = $("outcomesMaturityStrip");
+  if (!wrap) return;
+  wrap.hidden = false;
+  wrap.className = "outcomes-maturity-strip";
+  wrap.replaceChildren();
+
+  const agg = outcomesPayload && typeof outcomesPayload.aggregate === "object" ? outcomesPayload.aggregate : null;
+  if (!agg) {
+    wrap.classList.add("outcomes-maturity-strip--neutral");
+    const p = document.createElement("p");
+    p.className = "outcomes-maturity-strip__line";
+    p.textContent = "Outcome engine: sin agregado cargado (API o pipeline).";
+    wrap.appendChild(p);
+    return;
+  }
+
+  const rows = Array.isArray(agg.narratives) ? agg.narratives : [];
+  const hzOk = {};
+  for (const h of OUTCOME_FR_HORIZONS) {
+    const key = `count_with_returns_${h}`;
+    hzOk[h] = rows.some((r) => {
+      const v = Number(r && r[key]);
+      return Number.isFinite(v) && v > 0;
+    });
+  }
+  const anyHz = OUTCOME_FR_HORIZONS.some((h) => hzOk[h]);
+
+  const snapN = Number(agg.runs_with_snapshots);
+  const frN = Number(agg.runs_with_forward_returns);
+  const snapTxt = Number.isFinite(snapN) ? String(snapN) : "—";
+  const frTxt = Number.isFinite(frN) ? String(frN) : "—";
+  const noFrRuns = Number.isFinite(frN) && frN === 0;
+
+  const rk = edgePayload && edgePayload.ranking;
+  const ranked = rk && Array.isArray(rk.ranked) ? rk.ranked : [];
+  const rankedCount = ranked.length;
+
+  const hzParts = OUTCOME_FR_HORIZONS.map((h) => `${h} ${hzOk[h] ? "sí" : "no"}`).join(" · ");
+
+  let statusText = "";
+  if (rankedCount > 0) {
+    wrap.classList.add("outcomes-maturity-strip--ready");
+    statusText = `Narrative edge: listo · ${rankedCount} narrativa(s) rankeada(s).`;
+  } else if (noFrRuns && !anyHz) {
+    wrap.classList.add("outcomes-maturity-strip--wait");
+    statusText =
+      "Narrative edge: aún no listo — sin forward returns en el agregado (cobertura temporal o pipeline).";
+  } else if (!anyHz) {
+    wrap.classList.add("outcomes-maturity-strip--wait");
+    statusText =
+      "Narrative edge: aún no listo — ningún horizonte 1d/3d/7d tiene observaciones de retorno en el agregado.";
+  } else {
+    wrap.classList.add("outcomes-maturity-strip--partial");
+    statusText =
+      "Narrative edge: ranking vacío con FR parcial en agregado (p. ej. min. ocurrencias, filtros o datos incompletos).";
+  }
+
+  const line1 = document.createElement("p");
+  line1.className = "outcomes-maturity-strip__line outcomes-maturity-strip__line--status";
+  line1.textContent = statusText;
+
+  const line2 = document.createElement("p");
+  line2.className = "outcomes-maturity-strip__line outcomes-maturity-strip__line--metrics";
+  line2.textContent = `Runs (snapshots): ${snapTxt} · Runs con forward returns: ${frTxt} · FR en agregado: ${hzParts}`;
+
+  wrap.appendChild(line1);
+  wrap.appendChild(line2);
 }
 
 function renderNarrativeEdgeTop(edgePayload, lc, sets, f, edgeByKey) {

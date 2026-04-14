@@ -18,6 +18,13 @@ def test_admin_index_has_narrative_filter_ids() -> None:
         assert f'id="{id_}"' in html, f"missing #{id_}"
 
 
+def test_admin_index_has_outcomes_maturity_strip() -> None:
+    root = Path(__file__).resolve().parents[2]
+    html = (root / "admin" / "index.html").read_text(encoding="utf-8")
+    assert 'id="outcomesMaturityStrip"' in html
+    assert 'class="outcomes-maturity-strip"' in html
+
+
 def test_admin_outcomes_table_includes_risk_timing_headers() -> None:
     """La tabla Narrative outcomes expone DD y TTP (agregado existente)."""
     root = Path(__file__).resolve().parents[2]
