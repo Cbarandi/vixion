@@ -18,6 +18,7 @@ data/merged/
 data/scored/
 data/narratives/
 data/alerts/
+data/narrative_history/
 
 # Temp / local files
 *.log

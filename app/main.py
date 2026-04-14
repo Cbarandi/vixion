@@ -13,13 +13,15 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_SCORED_DIR = PROJECT_ROOT / "data" / "scored"
 DATA_NARRATIVES_DIR = PROJECT_ROOT / "data" / "narratives"
 DATA_ALERTS_DIR = PROJECT_ROOT / "data" / "alerts"
+DATA_NH_DIFFS = PROJECT_ROOT / "data" / "narrative_history" / "diffs"
+DATA_NH_LIFECYCLE = PROJECT_ROOT / "data" / "narrative_history" / "lifecycle"
 
 SORT_FIELDS = frozenset({"priority_score", "signal_score", "risk_score"})
 
 app = FastAPI(
     title="VIXION Scored Articles API",
     version="0.1.0",
-    description="Sirve el último rss_scored_*.json y narratives_*.json para panel/admin.",
+    description="Sirve scored, narrativas, alerts y artefactos narrative_history para panel/admin.",
 )
 app.add_middleware(
     CORSMiddleware,
@@ -120,6 +122,72 @@ def load_latest_alerts_payload() -> dict[str, Any]:
         raise ValueError("El JSON de alerts no es un objeto.")
     data["_source_path"] = str(path.resolve())
     return data
+
+
+def find_latest_glob_file(directory: Path, pattern: str) -> Path | None:
+    """Último archivo por mtime que coincide con pattern, o None."""
+    if not directory.is_dir():
+        return None
+    candidates = sorted(
+        directory.glob(pattern),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    return candidates[0] if candidates else None
+
+
+@app.get("/narrative-history/latest")
+def narrative_history_latest() -> dict[str, Any]:
+    """
+    Últimos JSON de diff y lifecycle generados por el pipeline (sin 404 si faltan).
+    """
+    lifecycle_path = find_latest_glob_file(DATA_NH_LIFECYCLE, "lifecycle_*.json")
+    diff_path = find_latest_glob_file(DATA_NH_DIFFS, "diff_*.json")
+
+    out: dict[str, Any] = {
+        "lifecycle": None,
+        "diff_meta": None,
+        "lifecycle_source": None,
+        "diff_source": None,
+    }
+
+    if lifecycle_path and lifecycle_path.is_file():
+        try:
+            data = json.loads(lifecycle_path.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                out["lifecycle"] = data
+                try:
+                    out["lifecycle_source"] = str(lifecycle_path.relative_to(PROJECT_ROOT))
+                except ValueError:
+                    out["lifecycle_source"] = str(lifecycle_path)
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            pass
+
+    if diff_path and diff_path.is_file():
+        try:
+            d = json.loads(diff_path.read_text(encoding="utf-8"))
+            if isinstance(d, dict):
+                added = d.get("added")
+                removed = d.get("removed")
+                changed = d.get("changed")
+                out["diff_meta"] = {
+                    "current_run_id": d.get("current_run_id"),
+                    "previous_run_id": d.get("previous_run_id"),
+                    "diff_generated_at": d.get("diff_generated_at"),
+                    "counts": {
+                        "added": len(added) if isinstance(added, list) else 0,
+                        "removed": len(removed) if isinstance(removed, list) else 0,
+                        "changed": len(changed) if isinstance(changed, list) else 0,
+                    },
+                }
+                try:
+                    out["diff_source"] = str(diff_path.relative_to(PROJECT_ROOT))
+                except ValueError:
+                    out["diff_source"] = str(diff_path)
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            pass
+
+    return out
 
 
 def find_recent_alerts_json_paths(alerts_dir: Path, limit: int) -> list[Path]:

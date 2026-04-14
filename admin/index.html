@@ -61,6 +61,29 @@
         <div id="alertsList" class="alerts-strips-host" aria-live="polite"></div>
       </section>
 
+      <section class="evolution-block" aria-labelledby="evolutionHeading">
+        <div class="section-head section-head--tight">
+          <p class="section-eyebrow">Pipeline</p>
+          <h2 id="evolutionHeading" class="section-title">Historial &amp; ciclo de vida</h2>
+          <p id="evolutionSummary" class="evolution-summary"></p>
+        </div>
+        <p id="evolutionDiffLine" class="evolution-diff-line" aria-live="polite"></p>
+        <div class="evolution-cols">
+          <div class="evolution-col">
+            <h3 class="evolution-col__title">Nuevo</h3>
+            <ul id="evolutionNew" class="evolution-list"></ul>
+          </div>
+          <div class="evolution-col evolution-col--rising">
+            <h3 class="evolution-col__title">Rising</h3>
+            <ul id="evolutionRising" class="evolution-list"></ul>
+          </div>
+          <div class="evolution-col evolution-col--fading">
+            <h3 class="evolution-col__title">Fading</h3>
+            <ul id="evolutionFading" class="evolution-list"></ul>
+          </div>
+        </div>
+      </section>
+
       <section class="narratives-block" aria-labelledby="narrativesHeading">
         <div id="narrativeHero" class="narrative-hero" aria-live="polite"></div>
 

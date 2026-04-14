@@ -14,6 +14,10 @@ const state = {
 /** Ficheros alerts_*.json a fusionar (debe coincidir con el default del API). */
 const ALERTS_RECENT_FILES = 5;
 
+const EVOLUTION_MAX_NEW = 12;
+const EVOLUTION_MAX_RISING = 8;
+const EVOLUTION_MAX_FADING = 8;
+
 function apiBase() {
   return $("apiBase").value.replace(/\/$/, "");
 }
@@ -73,6 +77,17 @@ async function loadLatest() {
 
 async function loadNarrativesLatest() {
   return fetchJson("/narratives/latest");
+}
+
+/** Artefactos pipeline: último lifecycle + meta del diff (no lanza si el endpoint falta). */
+async function loadNarrativeHistoryLatest() {
+  try {
+    const res = await fetch(`${apiBase()}/narrative-history/latest`);
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
 
 /** No lanza: si no hay alerts o falla la red, devuelve null. Usa últimos N JSON fusionados. */
@@ -171,6 +186,146 @@ function renderAlertStripHtml(a) {
       <div class="alert-strip__right">${right}</div>
     </div>
   `;
+}
+
+function renderNarrativeEvolution(payload) {
+  const summary = $("evolutionSummary");
+  const diffLine = $("evolutionDiffLine");
+  const ulN = $("evolutionNew");
+  const ulR = $("evolutionRising");
+  const ulF = $("evolutionFading");
+  if (!summary || !diffLine || !ulN || !ulR || !ulF) return;
+
+  const emptyCols = () => {
+    for (const ul of [ulN, ulR, ulF]) {
+      ul.replaceChildren();
+      const li = document.createElement("li");
+      li.className = "evolution-list__empty";
+      li.textContent = "—";
+      ul.appendChild(li);
+    }
+  };
+
+  if (
+    !payload ||
+    (payload.lifecycle == null &&
+      payload.diff_meta == null &&
+      !payload.lifecycle_source &&
+      !payload.diff_source)
+  ) {
+    summary.textContent =
+      "Sin artefactos de historial. Ejecuta el pipeline (persist_narrative_history + classify_narrative_lifecycle) y / o arranca la API.";
+    diffLine.textContent = "";
+    emptyCols();
+    return;
+  }
+
+  const lc =
+    payload.lifecycle && typeof payload.lifecycle === "object"
+      ? payload.lifecycle
+      : null;
+  const dm =
+    payload.diff_meta && typeof payload.diff_meta === "object"
+      ? payload.diff_meta
+      : null;
+
+  if (lc) {
+    const run = lc.run_id ?? "—";
+    const when = lc.classified_at ?? "—";
+    const th =
+      lc.threshold_delta_strength != null ? String(lc.threshold_delta_strength) : "—";
+    const first = lc.is_first_snapshot ? " · primer snapshot (sin baseline previo)" : "";
+    const n = Array.isArray(lc.new) ? lc.new.length : 0;
+    const r = Array.isArray(lc.rising) ? lc.rising.length : 0;
+    const f = Array.isArray(lc.fading) ? lc.fading.length : 0;
+    summary.textContent = `Run ${run} · clasificado ${when} · umbral Δstrength ±${th}${first} · NEW ${n} · RISING ${r} · FADING ${f}`;
+  } else {
+    summary.textContent =
+      "Lifecycle aún no generado; puedes ver el resumen del diff bajo la línea siguiente.";
+  }
+
+  if (dm && dm.counts) {
+    const c = dm.counts;
+    const src = payload.diff_source ? ` · ${payload.diff_source}` : "";
+    diffLine.textContent = `Último diff: +${c.added ?? 0} añadidas / −${c.removed ?? 0} quitadas / ${c.changed ?? 0} con cambio de métricas${src}`;
+  } else {
+    diffLine.textContent = "";
+  }
+
+  const fill = (ul, items, makeRow) => {
+    ul.replaceChildren();
+    if (!items?.length) {
+      const li = document.createElement("li");
+      li.className = "evolution-list__empty";
+      li.textContent = "—";
+      ul.appendChild(li);
+      return;
+    }
+    for (const it of items) {
+      ul.appendChild(makeRow(it));
+    }
+  };
+
+  const news = lc && Array.isArray(lc.new) ? lc.new.slice(0, EVOLUTION_MAX_NEW) : [];
+  fill(ulN, news, (it) => {
+    const li = document.createElement("li");
+    li.className = "evolution-item";
+    const name = document.createElement("span");
+    name.className = "evolution-item__name";
+    name.textContent = it.narrative || it.narrative_key || "—";
+    li.appendChild(name);
+    if (it.narrative_strength != null && it.narrative_strength !== "") {
+      const meta = document.createElement("span");
+      meta.className = "evolution-item__meta";
+      meta.textContent = `str ${it.narrative_strength}`;
+      li.appendChild(meta);
+    }
+    return li;
+  });
+
+  let rising = lc && Array.isArray(lc.rising) ? [...lc.rising] : [];
+  rising.sort(
+    (a, b) => (Number(b.delta_strength) || 0) - (Number(a.delta_strength) || 0),
+  );
+  rising = rising.slice(0, EVOLUTION_MAX_RISING);
+  fill(ulR, rising, (it) => {
+    const li = document.createElement("li");
+    li.className = "evolution-item";
+    const name = document.createElement("span");
+    name.className = "evolution-item__name";
+    name.textContent = it.narrative || it.narrative_key || "—";
+    const d = document.createElement("span");
+    d.className = "evolution-item__delta evolution-item__delta--up";
+    const v = Number(it.delta_strength);
+    d.textContent = Number.isFinite(v)
+      ? v > 0
+        ? `Δ +${v}`
+        : `Δ ${v}`
+      : "—";
+    li.appendChild(name);
+    li.appendChild(d);
+    return li;
+  });
+
+  let fading = lc && Array.isArray(lc.fading) ? [...lc.fading] : [];
+  fading.sort(
+    (a, b) => (Number(a.delta_strength) || 0) - (Number(b.delta_strength) || 0),
+  );
+  fading = fading.slice(0, EVOLUTION_MAX_FADING);
+  fill(ulF, fading, (it) => {
+    const li = document.createElement("li");
+    li.className = "evolution-item";
+    const name = document.createElement("span");
+    name.className = "evolution-item__name";
+    name.textContent = it.narrative || it.narrative_key || "—";
+    const d = document.createElement("span");
+    d.className = "evolution-item__delta evolution-item__delta--down";
+    const v = Number(it.delta_strength);
+    d.textContent = Number.isFinite(v) ? `Δ ${v}` : "—";
+    li.appendChild(name);
+    li.appendChild(d);
+    return li;
+  });
 }
 
 function renderAlertsList(alertsPayload) {
@@ -641,10 +796,11 @@ async function reload() {
   renderAlertsList(alertsPayload);
 
   try {
-    const [filters, latest, narrData] = await Promise.all([
+    const [filters, latest, narrData, evolutionPayload] = await Promise.all([
       loadFilters(),
       loadLatest(),
       loadNarrativesLatest(),
+      loadNarrativeHistoryLatest(),
     ]);
     filterOptions = filters;
     rawArticles = Array.isArray(latest.articles) ? latest.articles : [];
@@ -657,10 +813,12 @@ async function reload() {
     render();
 
     await loadAndRenderNarratives(narrData);
+    renderNarrativeEvolution(evolutionPayload);
   } catch (e) {
     $("meta").textContent = "";
     showError(e instanceof Error ? e.message : String(e));
     await loadAndRenderNarratives();
+    renderNarrativeEvolution(null);
   }
 }
 

@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import sys
 from datetime import UTC, datetime
 from pathlib import Path
@@ -17,6 +18,7 @@ import requests
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_NARRATIVES_DIR = PROJECT_ROOT / "data" / "narratives"
 DATA_ALERTS_DIR = PROJECT_ROOT / "data" / "alerts"
+DATA_LIFECYCLE_DIR = PROJECT_ROOT / "data" / "narrative_history" / "lifecycle"
 
 # Umbrales (alineados con panel admin)
 THRESHOLD_EARLY_OPPORTUNITY = 20.0
@@ -75,6 +77,107 @@ def find_latest_narratives_json() -> Path:
     if not candidates:
         raise FileNotFoundError(f"No hay narratives_*.json en {DATA_NARRATIVES_DIR}")
     return candidates[0]
+
+
+def normalize_narrative_key(label: str) -> str:
+    """Misma regla que persist_narrative_history: strip + colapso de espacios."""
+    return re.sub(r"\s+", " ", (label or "").strip())
+
+
+def find_latest_lifecycle_json() -> Path | None:
+    if not DATA_LIFECYCLE_DIR.is_dir():
+        return None
+    files = sorted(
+        DATA_LIFECYCLE_DIR.glob("lifecycle_*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,
+    )
+    return files[0] if files else None
+
+
+def lifecycle_key_sets_from_payload(lc: dict[str, Any]) -> tuple[set[str], set[str]]:
+    """
+    Claves de narrativa para fase NEW (lista `new`) y RISING (`rising`).
+    Solo estas dos fases enriquecen alertas en este slice.
+    """
+    new_keys: set[str] = set()
+    rising_keys: set[str] = set()
+
+    for item in lc.get("new") or []:
+        if not isinstance(item, dict):
+            continue
+        raw = item.get("narrative_key")
+        if isinstance(raw, str) and raw.strip():
+            new_keys.add(normalize_narrative_key(raw))
+        else:
+            n = item.get("narrative")
+            if isinstance(n, str) and n.strip():
+                new_keys.add(normalize_narrative_key(n))
+
+    for item in lc.get("rising") or []:
+        if not isinstance(item, dict):
+            continue
+        raw = item.get("narrative_key")
+        if isinstance(raw, str) and raw.strip():
+            rising_keys.add(normalize_narrative_key(raw))
+        else:
+            n = item.get("narrative")
+            if isinstance(n, str) and n.strip():
+                rising_keys.add(normalize_narrative_key(n))
+
+    return new_keys, rising_keys
+
+
+def load_latest_lifecycle_key_sets() -> tuple[set[str], set[str]] | None:
+    path = find_latest_lifecycle_json()
+    if path is None or not path.is_file():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return None
+    if not isinstance(data, dict):
+        return None
+    return lifecycle_key_sets_from_payload(data)
+
+
+def enrich_alerts_with_lifecycle(
+    alerts: list[dict[str, Any]],
+    *,
+    new_keys: set[str] | None = None,
+    rising_keys: set[str] | None = None,
+) -> int:
+    """
+    Añade opcionalmente ``lifecycle: {"phase": "new"|"rising"}`` por narrativa.
+    Retorna cuántas alertas se enriquecieron.
+    Si no se pasan sets, intenta leer el último lifecycle_*.json.
+    """
+    if new_keys is None and rising_keys is None:
+        loaded = load_latest_lifecycle_key_sets()
+        if loaded is None:
+            return 0
+        new_keys, rising_keys = loaded
+    else:
+        new_keys = new_keys if new_keys is not None else set()
+        rising_keys = rising_keys if rising_keys is not None else set()
+
+    n = 0
+    for a in alerts:
+        if not isinstance(a, dict):
+            continue
+        name = (a.get("narrative") or "").strip()
+        if not name:
+            continue
+        k = normalize_narrative_key(name)
+        if not k:
+            continue
+        if k in new_keys:
+            a["lifecycle"] = {"phase": "new"}
+            n += 1
+        elif k in rising_keys:
+            a["lifecycle"] = {"phase": "rising"}
+            n += 1
+    return n
 
 
 def find_previous_narratives_json() -> Path | None:
@@ -264,6 +367,8 @@ def print_alerts(alerts: list[dict[str, Any]]) -> None:
         if t == "surge":
             print("🔥 SURGE DETECTED")
             print(f"   {a['narrative']}")
+            if isinstance(a.get("lifecycle"), dict) and a["lifecycle"].get("phase"):
+                print(f"   lifecycle: {a['lifecycle']['phase']}")
             pct = float(a["growth"]) * 100
             print(
                 f"   {a['previous_strength']} → {a['current_strength']} "
@@ -278,6 +383,8 @@ def print_alerts(alerts: list[dict[str, Any]]) -> None:
         else:
             print(f"• {t}")
         print(f"   {a['narrative']}")
+        if isinstance(a.get("lifecycle"), dict) and a["lifecycle"].get("phase"):
+            print(f"   lifecycle: {a['lifecycle']['phase']}")
         print(f"   strength: {a['narrative_strength']}")
         print(
             f"   posts: {a['total_articles']} "
@@ -320,18 +427,32 @@ def _telegram_header_block() -> str:
     return "\n".join(lines)
 
 
+def format_lifecycle_line(alert: dict[str, Any]) -> str:
+    """Línea opcional para digest (Telegram / email), sin romper formato legacy."""
+    lc = alert.get("lifecycle")
+    if not isinstance(lc, dict):
+        return ""
+    ph = lc.get("phase")
+    if ph == "new":
+        return "\nlifecycle: NEW"
+    if ph == "rising":
+        return "\nlifecycle: RISING"
+    return ""
+
+
 def format_alert_for_telegram(alert: dict[str, Any]) -> str:
     """Texto plano para sendMessage (sin parse_mode, evita romper con _ * en narrativas)."""
     t = alert.get("type")
     nar = (alert.get("narrative") or "").strip()
+    suf = format_lifecycle_line(alert)
 
     if t == "early_opportunity":
         s = alert.get("narrative_strength")
-        return f"🚀 EARLY\n{nar}\nstrength: {s}"
+        return f"🚀 EARLY\n{nar}\nstrength: {s}{suf}"
 
     if t == "confirmed_momentum":
         s = alert.get("narrative_strength")
-        return f"⚠️ MOMENTUM\n{nar}\nstrength: {s}"
+        return f"⚠️ MOMENTUM\n{nar}\nstrength: {s}{suf}"
 
     if t == "surge":
         prev = alert.get("previous_strength")
@@ -341,9 +462,9 @@ def format_alert_for_telegram(alert: dict[str, Any]) -> str:
         except (TypeError, ValueError):
             g = 0.0
         pct = round(g * 100)
-        return f"🔥 SURGE\n{nar}\n{prev} → {cur}\n(+{pct}%)"
+        return f"🔥 SURGE\n{nar}\n{prev} → {cur}\n(+{pct}%){suf}"
 
-    return f"VIXION\n{t}\n{nar}"
+    return f"VIXION\n{t}\n{nar}{suf}"
 
 
 def _send_telegram_message(token: str, chat_id: str, text: str) -> None:
@@ -494,6 +615,8 @@ def main() -> None:
     prev_keys = load_previous_dedup_keys()
     new_alerts = filter_new_alerts(candidates, set(prev_keys))
 
+    enriched_n = enrich_alerts_with_lifecycle(new_alerts)
+
     print(f"Narrativas actuales: {nar_path}")
     if prev_nar_path:
         print(f"Narrativas anteriores (SURGE): {prev_nar_path}")
@@ -501,6 +624,10 @@ def main() -> None:
         f"Candidatos: {len(candidates)} "
         f"(incl. surge: {surge_count}) · Nuevos (sin duplicar): {len(new_alerts)}",
     )
+    if enriched_n:
+        print(
+            f"Lifecycle: {enriched_n} alerta(s) etiquetadas (NEW / RISING) desde último lifecycle.",
+        )
     print()
 
     if not new_alerts:
