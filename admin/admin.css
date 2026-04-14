@@ -1135,6 +1135,18 @@ table.data--articles details.breakdown summary {
   font-size: 0.74rem;
 }
 
+.outcomes-table thead th {
+  vertical-align: bottom;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.outcomes-table thead tr:last-child th {
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding-top: 0.15rem;
+}
+
 .outcomes-table td:first-child {
   max-width: 18rem;
   color: rgba(255, 255, 255, 0.92);

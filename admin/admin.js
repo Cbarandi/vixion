@@ -827,6 +827,25 @@ function fmtRet(value) {
   return `${pct >= 0 ? "+" : ""}${pct.toFixed(2)}%`;
 }
 
+/** Horas (media TTP); null → — */
+function fmtTtpHours(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "—";
+  return n.toFixed(1);
+}
+
+function ddCountTitle(row, h) {
+  const k = `count_with_drawdown_${h}`;
+  const n = Number(row[k]);
+  return Number.isFinite(n) && n > 0 ? `Muestras DD ${h}: n=${n}` : "";
+}
+
+function ttpCountTitle(row, h) {
+  const k = `count_with_time_to_peak_${h}`;
+  const n = Number(row[k]);
+  return Number.isFinite(n) && n > 0 ? `Muestras TTP ${h}: n=${n}` : "";
+}
+
 function renderNarrativeEdgeTop(edgePayload, lc, sets, f, edgeByKey) {
   const el = $("outcomesEdgeStrip");
   if (!el) return;
@@ -889,7 +908,7 @@ function renderNarrativeOutcomesTable(
       "Sin agregado de outcomes (ejecuta aggregate_narrative_outcomes en el pipeline).";
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 10;
+    td.colSpan = 16;
     td.className = "outcomes-empty";
     td.textContent = "Sin datos.";
     tr.appendChild(td);
@@ -922,7 +941,7 @@ function renderNarrativeOutcomesTable(
   if (!rows.length) {
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 10;
+    td.colSpan = 16;
     td.className = "outcomes-empty";
     td.textContent = "Sin filas con estos filtros.";
     tr.appendChild(td);
@@ -932,24 +951,29 @@ function renderNarrativeOutcomesTable(
 
   for (const r of rows) {
     const tr = document.createElement("tr");
-    const cells = [
-      r.narrative_key || "—",
-      String(r.occurrences ?? "—"),
-      fmtRet(r.avg_btc_return_1d),
-      fmtRet(r.avg_btc_return_3d),
-      fmtRet(r.avg_btc_return_7d),
-      fmtPct(r.positive_rate_1d),
-      fmtPct(r.positive_rate_3d),
-      fmtPct(r.positive_rate_7d),
-      String(r.runs_tagged_new ?? 0),
-      String(r.runs_tagged_rising ?? 0),
-    ];
-    cells.forEach((text, i) => {
+    const add = (text, isNum, title) => {
       const td = document.createElement("td");
       td.textContent = text;
-      if (i > 0) td.className = "num";
+      if (isNum) td.className = "num";
+      if (title) td.title = title;
       tr.appendChild(td);
-    });
+    };
+    add(r.narrative_key || "—", false, "");
+    add(String(r.occurrences ?? "—"), true, "");
+    add(fmtRet(r.avg_btc_return_1d), true, "");
+    add(fmtRet(r.avg_btc_return_3d), true, "");
+    add(fmtRet(r.avg_btc_return_7d), true, "");
+    add(fmtPct(r.positive_rate_1d), true, "");
+    add(fmtPct(r.positive_rate_3d), true, "");
+    add(fmtPct(r.positive_rate_7d), true, "");
+    add(fmtPct(r.avg_btc_max_drawdown_1d), true, ddCountTitle(r, "1d"));
+    add(fmtPct(r.avg_btc_max_drawdown_3d), true, ddCountTitle(r, "3d"));
+    add(fmtPct(r.avg_btc_max_drawdown_7d), true, ddCountTitle(r, "7d"));
+    add(fmtTtpHours(r.avg_btc_time_to_peak_hours_1d), true, ttpCountTitle(r, "1d"));
+    add(fmtTtpHours(r.avg_btc_time_to_peak_hours_3d), true, ttpCountTitle(r, "3d"));
+    add(fmtTtpHours(r.avg_btc_time_to_peak_hours_7d), true, ttpCountTitle(r, "7d"));
+    add(String(r.runs_tagged_new ?? 0), true, "");
+    add(String(r.runs_tagged_rising ?? 0), true, "");
     tbody.appendChild(tr);
   }
 }
